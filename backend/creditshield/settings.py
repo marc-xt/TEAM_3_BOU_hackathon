@@ -4,7 +4,9 @@ Django settings for the CreditShield AI backend (Dev 1 owned).
 SECRET_KEY and DEBUG are read from environment variables so nothing
 sensitive is ever committed (see .gitignore / .env.example).
 """
+from datetime import timedelta
 from pathlib import Path
+import os
 
 from decouple import Csv, config
 
@@ -34,8 +36,12 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "rest_framework_simplejwt",
     "corsheaders",
     "core",
+    "advisory",
+    "chatbot",
+    
 ]
 
 MIDDLEWARE = [
@@ -78,6 +84,13 @@ DATABASES = {
 }
 
 
+
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
+
+
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
@@ -101,10 +114,59 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # ValidationError -> 400, which combined with explicit validation in
 # views.py keeps malformed/missing/invalid-id requests at 4xx rather
 # than 500 (section 8.3 of the task sheet).
+#
+# DEFAULT_PERMISSION_CLASSES stays IsAuthenticated (deny-by-default) here
+# because the new `planning` app carries real financial data. The original
+# `core` endpoints (parse-sms, dashboards, ...) explicitly override this
+# with AllowAny per-view in core/views.py so this change does not lock
+# teammates out of the existing hackathon-demo contract.
 REST_FRAMEWORK = {
     "DEFAULT_RENDERER_CLASSES": ["rest_framework.renderers.JSONRenderer"],
     "DEFAULT_PARSER_CLASSES": ["rest_framework.parsers.JSONParser"],
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ],
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAuthenticated",
+    ],
+    "DEFAULT_THROTTLE_CLASSES": [
+        "rest_framework.throttling.ScopedRateThrottle",
+    ],
+    "DEFAULT_THROTTLE_RATES": {
+        # Consent confirmation guards a real lending decision -- throttled
+        # tightly so a leaked/guessed token can't be brute-forced.
+        "consent-confirm": "10/min",
+        "consent-request": "20/hour",
+        # Data-subject requests (access/correction/deletion) are rare,
+        # deliberate actions -- a low rate limits automated abuse without
+        # affecting a genuine borrower.
+        "dsr": "10/hour",
+        "planning-write": "60/min",
+        "planning-read": "300/min",
+    },
 }
+
+# djangorestframework-simplejwt. Short-lived access tokens + a rotating
+# refresh token so a stolen access token has a small blast-radius window;
+# BLACKLIST requires the token_blacklist app, deliberately not added here
+# to keep the demo DB lean -- rotation without blacklisting still limits
+# reuse of a superseded refresh token client-side.
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=15),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
+    "ROTATE_REFRESH_TOKENS": True,
+    "ALGORITHM": "HS256",
+    "SIGNING_KEY": SECRET_KEY,
+}
+
+# Field-level encryption key for planning.fields (EncryptedDecimalField /
+# EncryptedCharField). MUST be a urlsafe-base64 32-byte key generated with
+# `Fernet.generate_key()` and MUST NOT be the same value as SECRET_KEY --
+# different threat models (SECRET_KEY signs sessions/tokens and rotating
+# it logs everyone out; this key only decrypts stored financial figures).
+# No insecure default is provided: an unset key fails loudly via
+# planning.fields._get_fernet() rather than silently storing plaintext.
+FIELD_ENCRYPTION_KEY = config("DJANGO_FIELD_ENCRYPTION_KEY", default="")
 
 # CORS - scoped strictly to the known local dev origins for the two
 # frontends. Never left wide open with '*' (section 8.3 of the task

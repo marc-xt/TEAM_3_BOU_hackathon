@@ -20,4 +20,5 @@ urlpatterns = [
         name="dashboard-exposure",
     ),
     path("cases/", views.cases_view, name="cases"),
+    path("complaints/", views.complaint_create_view, name="complaint-create"),
 ]

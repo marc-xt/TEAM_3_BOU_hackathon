@@ -1,5 +1,6 @@
 from django.db import models
 
+from core.apr_calculator import AprCalculationError, evaluate_loan_cost
 from core.constants import (
     CASE_TYPE_CHOICES,
     REGULATOR_CHOICES,
@@ -63,6 +64,23 @@ class Loan(models.Model):
 
     def __str__(self):
         return f"{self.borrower.full_name} - {self.lender.name} - {self.amount}"
+
+    def cost_evaluation(self):
+        """Effective-APR evaluation for this loan, using created_at (the
+        date this record was written, i.e. disbursement day for seeded/
+        parsed loans) as the disbursement-date proxy since no separate
+        disbursement_date field is tracked. Returns None if amount is
+        invalid (e.g. zero) rather than raising, so callers/serializers
+        can render "n/a" instead of erroring on bad legacy data."""
+        try:
+            return evaluate_loan_cost(
+                amount=self.amount,
+                fees=self.fees,
+                disbursement_date=self.created_at.date(),
+                due_date=self.due_date,
+            )
+        except AprCalculationError:
+            return None
 
 
 class Complaint(models.Model):
