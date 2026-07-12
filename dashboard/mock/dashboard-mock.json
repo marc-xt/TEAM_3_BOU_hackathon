@@ -1,0 +1,169 @@
+{
+  "complaints": [
+    {
+      "lender_id": 1,
+      "lender_name": "Four Financial",
+      "complaint_count": 5
+    },
+    {
+      "lender_id": 2,
+      "lender_name": "Cashy",
+      "complaint_count": 4
+    },
+    {
+      "lender_id": 4,
+      "lender_name": "Mokash",
+      "complaint_count": 3
+    },
+    {
+      "lender_id": 3,
+      "lender_name": "Zenka",
+      "complaint_count": 3
+    },
+    {
+      "lender_id": 5,
+      "lender_name": "Quick Credit",
+      "complaint_count": 3
+    }
+  ],
+  "exposure": [
+    {
+      "district": "Kampala",
+      "borrower_count": 4,
+      "total_exposure": 1450000.0
+    },
+    {
+      "district": "Gulu",
+      "borrower_count": 3,
+      "total_exposure": 1028000.0
+    },
+    {
+      "district": "Wakiso",
+      "borrower_count": 2,
+      "total_exposure": 350000.0
+    },
+    {
+      "district": "Jinja",
+      "borrower_count": 1,
+      "total_exposure": 270000.0
+    },
+    {
+      "district": "Mbarara",
+      "borrower_count": 2,
+      "total_exposure": 125000.0
+    },
+    {
+      "district": "Arua",
+      "borrower_count": 1,
+      "total_exposure": 65000.0
+    },
+    {
+      "district": "Masaka",
+      "borrower_count": 1,
+      "total_exposure": 45000.0
+    }
+  ],
+  "cases": {
+    "bou": [
+      {
+        "id": 1,
+        "regulator": "BoU",
+        "status": "under_review",
+        "case_type": "hidden_fees",
+        "lender_name": "Four Financial",
+        "borrower_district": "Kampala",
+        "created_at": "2026-06-03T11:00:00Z",
+        "notes": "Auto-routed from case_type=hidden_fees."
+      },
+      {
+        "id": 3,
+        "regulator": "BoU",
+        "status": "open",
+        "case_type": "interest_rate",
+        "lender_name": "Cashy",
+        "borrower_district": "Kampala",
+        "created_at": "2026-06-05T11:00:00Z",
+        "notes": "Auto-routed from case_type=interest_rate."
+      },
+      {
+        "id": 5,
+        "regulator": "BoU",
+        "status": "resolved",
+        "case_type": "hidden_fees",
+        "lender_name": "Zenka",
+        "borrower_district": "Wakiso",
+        "created_at": "2026-06-07T11:00:00Z",
+        "notes": "Auto-routed from case_type=hidden_fees."
+      },
+      {
+        "id": 8,
+        "regulator": "BoU",
+        "status": "resolved",
+        "case_type": "interest_rate",
+        "lender_name": "Mokash",
+        "borrower_district": "Mbarara",
+        "created_at": "2026-06-10T11:00:00Z",
+        "notes": "Auto-routed from case_type=interest_rate."
+      },
+      {
+        "id": 10,
+        "regulator": "BoU",
+        "status": "under_review",
+        "case_type": "hidden_fees",
+        "lender_name": "Zenka",
+        "borrower_district": "Kampala",
+        "created_at": "2026-06-12T11:00:00Z",
+        "notes": "Auto-routed from case_type=hidden_fees."
+      },
+      {
+        "id": 15,
+        "regulator": "BoU",
+        "status": "open",
+        "case_type": "interest_rate",
+        "lender_name": "Zenka",
+        "borrower_district": "Jinja",
+        "created_at": "2026-06-17T11:00:00Z",
+        "notes": "Auto-routed from case_type=interest_rate."
+      },
+      {
+        "id": 16,
+        "regulator": "BoU",
+        "status": "under_review",
+        "case_type": "hidden_fees",
+        "lender_name": "Four Financial",
+        "borrower_district": "Wakiso",
+        "created_at": "2026-06-18T11:00:00Z",
+        "notes": "Auto-routed from case_type=hidden_fees."
+      }
+    ],
+    "umra": [
+      {
+        "id": 7,
+        "regulator": "UMRA",
+        "status": "under_review",
+        "case_type": "unlicensed_lender",
+        "lender_name": "Quick Credit",
+        "borrower_district": "Gulu",
+        "created_at": "2026-06-09T11:00:00Z"
+      },
+      {
+        "id": 11,
+        "regulator": "UMRA",
+        "status": "resolved",
+        "case_type": "unlicensed_lender",
+        "lender_name": "Quick Credit",
+        "borrower_district": "Gulu",
+        "created_at": "2026-06-13T11:00:00Z"
+      },
+      {
+        "id": 18,
+        "regulator": "UMRA",
+        "status": "open",
+        "case_type": "unlicensed_lender",
+        "lender_name": "Quick Credit",
+        "borrower_district": "Kampala",
+        "created_at": "2026-06-20T11:00:00Z"
+      }
+    ]
+  }
+}

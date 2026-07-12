@@ -1,0 +1,8 @@
+node_modules/
+build/
+.env
+.env.local
+npm-debug.log*
+
+# Generated at prestart/prebuild from the canonical mock/ source
+public/mock/

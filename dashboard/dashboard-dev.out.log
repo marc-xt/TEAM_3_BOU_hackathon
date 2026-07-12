@@ -1,0 +1,10 @@
+
+> creditshield-dashboard@1.0.0 prestart
+> node scripts/sync-mock.js
+
+Synced mock/dashboard-mock.json -> public/mock/dashboard-mock.json
+
+> creditshield-dashboard@1.0.0 start
+> react-scripts start
+
+Something is already running on port 3000.

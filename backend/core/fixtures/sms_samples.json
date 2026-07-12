@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "label": "standard disbursement, slash date",
+    "text": "Dear customer, UGX 150,000 has been disbursed to your account from Four Financial. Processing fee of UGX 15,000 applies. Due on 10/05/2026. Thank you.",
+    "expected": {"lender": "Four Financial", "amount": "150000", "fees": "15000", "due_date": "2026-05-10"}
+  },
+  {
+    "id": 2,
+    "label": "standard disbursement, ISO date",
+    "text": "Cashy Loan Alert: UGX 200,000 credited. Service fee: UGX 25,000. Due date: 2026-06-01. Reply STOP to opt out.",
+    "expected": {"lender": "Cashy", "amount": "200000", "fees": "25000", "due_date": "2026-06-01"}
+  },
+  {
+    "id": 3,
+    "label": "no explicit fee mentioned, defaults to 0",
+    "text": "Zenka: Your loan of UGX 100,000 was approved and sent to your mobile money. Due 15/07/2026.",
+    "expected": {"lender": "Zenka", "amount": "100000", "fees": "0", "due_date": "2026-07-15"}
+  },
+  {
+    "id": 4,
+    "label": "dash-separated date",
+    "text": "Mokash: UGX 90,000 disbursed. Fee of UGX 5,000. Due on 20-07-2026.",
+    "expected": {"lender": "Mokash", "amount": "90000", "fees": "5000", "due_date": "2026-07-20"}
+  },
+  {
+    "id": 5,
+    "label": "text-form date",
+    "text": "Quick Credit: A loan of UGX 130,000 has been disbursed, fees of UGX 20,000. Due 5 May 2026.",
+    "expected": {"lender": "Quick Credit", "amount": "130000", "fees": "20000", "due_date": "2026-05-05"}
+  },
+  {
+    "id": 6,
+    "label": "lender via fallback pattern (not in known list)",
+    "text": "Notice from Timiza: UGX 70,000 credited to your wallet. Fee UGX 4,500. Due on 18/07/2026.",
+    "expected": {"lender": "Timiza", "amount": "70000", "fees": "4500", "due_date": "2026-07-18"}
+  },
+  {
+    "id": 7,
+    "label": "lowercase ugx, comma-free amount",
+    "text": "cashy: ugx 55000 disbursed to you, fee of ugx 3000, due 01/02/2026.",
+    "expected": {"lender": "Cashy", "amount": "55000", "fees": "3000", "due_date": "2026-02-01"}
+  },
+  {
+    "id": 8,
+    "label": "malformed: missing amount entirely",
+    "text": "Four Financial: Your loan request has been received and is being processed. Due 10/05/2026.",
+    "expected_error": "missing amount"
+  },
+  {
+    "id": 9,
+    "label": "malformed: missing due date entirely",
+    "text": "Mokash: UGX 65,000 disbursed to your mobile money account. Fee UGX 4,500.",
+    "expected_error": "missing due date"
+  },
+  {
+    "id": 10,
+    "label": "malformed: empty message",
+    "text": "",
+    "expected_error": "empty SMS"
+  },
+  {
+    "id": 11,
+    "label": "malformed: unrecognized lender, no fallback match",
+    "text": "your transaction of 45000 was processed. due 2026-07-29.",
+    "expected_error": "unidentifiable lender"
+  },
+  {
+    "id": 12,
+    "label": "repaid loan reminder, still parseable",
+    "text": "Zidisha reminder: Your loan of UGX 58,000 (fee UGX 3,500) is due 29/07/2026. Pay early to avoid penalties.",
+    "expected": {"lender": "Zidisha", "amount": "58000", "fees": "3500", "due_date": "2026-07-29"}
+  },
+  {
+    "id": 13,
+    "label": "high value loan, month-name date with period",
+    "text": "Branch: UGX 500,000 has been disbursed. Fees of UGX 45,000. Due 15 Aug. 2026.",
+    "expected": {"lender": "Branch", "amount": "500000", "fees": "45000", "due_date": "2026-08-15"}
+  }
+]

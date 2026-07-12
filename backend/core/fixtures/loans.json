@@ -1,0 +1,407 @@
+[
+  {
+    "model": "core.loan",
+    "pk": 1,
+    "fields": {
+      "borrower": 1,
+      "lender": 1,
+      "amount": "150000",
+      "fees": "15000",
+      "due_date": "2026-05-10",
+      "is_repaid": false,
+      "is_overdue": true,
+      "raw_sms": "",
+      "created_at": "2026-03-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.loan",
+    "pk": 2,
+    "fields": {
+      "borrower": 1,
+      "lender": 2,
+      "amount": "200000",
+      "fees": "25000",
+      "due_date": "2026-06-01",
+      "is_repaid": false,
+      "is_overdue": true,
+      "raw_sms": "",
+      "created_at": "2026-03-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.loan",
+    "pk": 3,
+    "fields": {
+      "borrower": 1,
+      "lender": 3,
+      "amount": "100000",
+      "fees": "8000",
+      "due_date": "2026-07-15",
+      "is_repaid": false,
+      "is_overdue": false,
+      "raw_sms": "",
+      "created_at": "2026-03-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.loan",
+    "pk": 4,
+    "fields": {
+      "borrower": 2,
+      "lender": 2,
+      "amount": "180000",
+      "fees": "20000",
+      "due_date": "2026-05-20",
+      "is_repaid": false,
+      "is_overdue": true,
+      "raw_sms": "",
+      "created_at": "2026-03-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.loan",
+    "pk": 5,
+    "fields": {
+      "borrower": 2,
+      "lender": 4,
+      "amount": "90000",
+      "fees": "5000",
+      "due_date": "2026-07-20",
+      "is_repaid": false,
+      "is_overdue": false,
+      "raw_sms": "",
+      "created_at": "2026-03-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.loan",
+    "pk": 6,
+    "fields": {
+      "borrower": 3,
+      "lender": 3,
+      "amount": "60000",
+      "fees": "4000",
+      "due_date": "2026-07-25",
+      "is_repaid": false,
+      "is_overdue": false,
+      "raw_sms": "",
+      "created_at": "2026-03-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.loan",
+    "pk": 7,
+    "fields": {
+      "borrower": 3,
+      "lender": 3,
+      "amount": "50000",
+      "fees": "3000",
+      "due_date": "2026-03-01",
+      "is_repaid": true,
+      "is_overdue": false,
+      "raw_sms": "",
+      "created_at": "2026-03-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.loan",
+    "pk": 8,
+    "fields": {
+      "borrower": 4,
+      "lender": 1,
+      "amount": "220000",
+      "fees": "30000",
+      "due_date": "2026-04-15",
+      "is_repaid": false,
+      "is_overdue": true,
+      "raw_sms": "",
+      "created_at": "2026-03-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.loan",
+    "pk": 9,
+    "fields": {
+      "borrower": 4,
+      "lender": 5,
+      "amount": "130000",
+      "fees": "20000",
+      "due_date": "2026-05-05",
+      "is_repaid": false,
+      "is_overdue": true,
+      "raw_sms": "",
+      "created_at": "2026-03-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.loan",
+    "pk": 10,
+    "fields": {
+      "borrower": 4,
+      "lender": 2,
+      "amount": "100000",
+      "fees": "10000",
+      "due_date": "2026-07-10",
+      "is_repaid": false,
+      "is_overdue": false,
+      "raw_sms": "",
+      "created_at": "2026-03-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.loan",
+    "pk": 11,
+    "fields": {
+      "borrower": 5,
+      "lender": 4,
+      "amount": "70000",
+      "fees": "5000",
+      "due_date": "2026-07-30",
+      "is_repaid": false,
+      "is_overdue": false,
+      "raw_sms": "",
+      "created_at": "2026-03-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.loan",
+    "pk": 12,
+    "fields": {
+      "borrower": 6,
+      "lender": 1,
+      "amount": "160000",
+      "fees": "18000",
+      "due_date": "2026-06-10",
+      "is_repaid": false,
+      "is_overdue": true,
+      "raw_sms": "",
+      "created_at": "2026-03-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.loan",
+    "pk": 13,
+    "fields": {
+      "borrower": 6,
+      "lender": 3,
+      "amount": "80000",
+      "fees": "6000",
+      "due_date": "2026-07-28",
+      "is_repaid": false,
+      "is_overdue": false,
+      "raw_sms": "",
+      "created_at": "2026-03-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.loan",
+    "pk": 14,
+    "fields": {
+      "borrower": 7,
+      "lender": 5,
+      "amount": "210000",
+      "fees": "28000",
+      "due_date": "2026-04-01",
+      "is_repaid": false,
+      "is_overdue": true,
+      "raw_sms": "",
+      "created_at": "2026-03-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.loan",
+    "pk": 15,
+    "fields": {
+      "borrower": 7,
+      "lender": 1,
+      "amount": "190000",
+      "fees": "22000",
+      "due_date": "2026-05-15",
+      "is_repaid": false,
+      "is_overdue": true,
+      "raw_sms": "",
+      "created_at": "2026-03-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.loan",
+    "pk": 16,
+    "fields": {
+      "borrower": 7,
+      "lender": 2,
+      "amount": "120000",
+      "fees": "12000",
+      "due_date": "2026-07-05",
+      "is_repaid": false,
+      "is_overdue": false,
+      "raw_sms": "",
+      "created_at": "2026-03-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.loan",
+    "pk": 17,
+    "fields": {
+      "borrower": 8,
+      "lender": 4,
+      "amount": "55000",
+      "fees": "3000",
+      "due_date": "2026-02-01",
+      "is_repaid": true,
+      "is_overdue": false,
+      "raw_sms": "",
+      "created_at": "2026-03-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.loan",
+    "pk": 18,
+    "fields": {
+      "borrower": 9,
+      "lender": 2,
+      "amount": "175000",
+      "fees": "19000",
+      "due_date": "2026-06-05",
+      "is_repaid": false,
+      "is_overdue": true,
+      "raw_sms": "",
+      "created_at": "2026-03-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.loan",
+    "pk": 19,
+    "fields": {
+      "borrower": 9,
+      "lender": 3,
+      "amount": "95000",
+      "fees": "7000",
+      "due_date": "2026-07-22",
+      "is_repaid": false,
+      "is_overdue": false,
+      "raw_sms": "",
+      "created_at": "2026-03-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.loan",
+    "pk": 20,
+    "fields": {
+      "borrower": 11,
+      "lender": 4,
+      "amount": "65000",
+      "fees": "4500",
+      "due_date": "2026-07-18",
+      "is_repaid": false,
+      "is_overdue": false,
+      "raw_sms": "",
+      "created_at": "2026-03-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.loan",
+    "pk": 21,
+    "fields": {
+      "borrower": 12,
+      "lender": 1,
+      "amount": "155000",
+      "fees": "16000",
+      "due_date": "2026-06-15",
+      "is_repaid": false,
+      "is_overdue": true,
+      "raw_sms": "",
+      "created_at": "2026-03-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.loan",
+    "pk": 22,
+    "fields": {
+      "borrower": 12,
+      "lender": 5,
+      "amount": "85000",
+      "fees": "6000",
+      "due_date": "2026-07-27",
+      "is_repaid": false,
+      "is_overdue": false,
+      "raw_sms": "",
+      "created_at": "2026-03-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.loan",
+    "pk": 23,
+    "fields": {
+      "borrower": 13,
+      "lender": 3,
+      "amount": "45000",
+      "fees": "2500",
+      "due_date": "2026-01-15",
+      "is_repaid": true,
+      "is_overdue": false,
+      "raw_sms": "",
+      "created_at": "2026-03-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.loan",
+    "pk": 24,
+    "fields": {
+      "borrower": 14,
+      "lender": 2,
+      "amount": "205000",
+      "fees": "26000",
+      "due_date": "2026-04-20",
+      "is_repaid": false,
+      "is_overdue": true,
+      "raw_sms": "",
+      "created_at": "2026-03-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.loan",
+    "pk": 25,
+    "fields": {
+      "borrower": 14,
+      "lender": 1,
+      "amount": "175000",
+      "fees": "21000",
+      "due_date": "2026-05-25",
+      "is_repaid": false,
+      "is_overdue": true,
+      "raw_sms": "",
+      "created_at": "2026-03-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.loan",
+    "pk": 26,
+    "fields": {
+      "borrower": 14,
+      "lender": 5,
+      "amount": "110000",
+      "fees": "11000",
+      "due_date": "2026-07-08",
+      "is_repaid": false,
+      "is_overdue": false,
+      "raw_sms": "",
+      "created_at": "2026-03-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.loan",
+    "pk": 27,
+    "fields": {
+      "borrower": 15,
+      "lender": 3,
+      "amount": "58000",
+      "fees": "3500",
+      "due_date": "2026-07-29",
+      "is_repaid": false,
+      "is_overdue": false,
+      "raw_sms": "",
+      "created_at": "2026-03-01T10:00:00Z"
+    }
+  }
+]
