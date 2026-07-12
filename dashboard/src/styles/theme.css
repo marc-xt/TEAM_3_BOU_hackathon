@@ -1,0 +1,119 @@
+/* ============================================================
+   CreditShield AI — Shared Design Tokens
+   Both dashboard/ (Dev 2) and borrower-app/ (Dev 3) use these
+   token names so the product reads as one application.
+   ============================================================ */
+
+:root {
+    /* ---- Colour palette ---- */
+    --color-bou-maroon: #800020;
+    --color-bou-maroon-dark: #5a0016;
+    --color-bou-maroon-light: #9e1b3c;
+    --color-bou-gold: #d4a017;
+    --color-bou-gold-light: #e8c34a;
+    --color-bou-gold-dark: #b8860b;
+
+    --color-white: #ffffff;
+    --color-gray-50: #f8f9fa;
+    --color-gray-100: #f1f3f5;
+    --color-gray-200: #e9ecef;
+    --color-gray-300: #dee2e6;
+    --color-gray-400: #ced4da;
+    --color-gray-500: #adb5bd;
+    --color-gray-600: #6c757d;
+    --color-gray-700: #495057;
+    --color-gray-800: #343a40;
+    --color-gray-900: #212529;
+
+    --color-danger: #dc3545;
+    --color-warning: #ffc107;
+    --color-success: #28a745;
+
+    --color-stress-low: #28a745;
+    --color-stress-medium: #ffc107;
+    --color-stress-high: #dc3545;
+
+    /* ---- Typography ---- */
+    --font-family-base: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
+
+    /* ---- Spacing scale ---- */
+    --spacing-1: 0.25rem;
+    --spacing-2: 0.5rem;
+    --spacing-3: 0.75rem;
+    --spacing-4: 1rem;
+    --spacing-5: 1.25rem;
+    --spacing-6: 1.5rem;
+    --spacing-8: 2rem;
+    --spacing-10: 2.5rem;
+    --spacing-12: 3rem;
+
+    /* ---- Border radius ---- */
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+    --radius-xl: 12px;
+    --radius-full: 9999px;
+
+    /* ---- Shadows ---- */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+    /* ---- Layout ---- */
+    --sidebar-width: 260px;
+    --header-height: 64px;
+}
+
+/* ---- Global resets ---- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--color-gray-900);
+    background-color: var(--color-gray-50);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--color-gray-900);
+}
+
+a {
+    color: var(--color-bou-maroon);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+}

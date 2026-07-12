@@ -1,0 +1,200 @@
+[
+  {
+    "model": "core.case",
+    "pk": 1,
+    "fields": {
+      "complaint": 1,
+      "regulator": "BoU",
+      "status": "under_review",
+      "notes": "Auto-routed from case_type=hidden_fees.",
+      "created_at": "2026-06-03T11:00:00Z"
+    }
+  },
+  {
+    "model": "core.case",
+    "pk": 2,
+    "fields": {
+      "complaint": 2,
+      "regulator": "UCC",
+      "status": "resolved",
+      "notes": "Auto-routed from case_type=harassment_sms.",
+      "created_at": "2026-06-04T11:00:00Z"
+    }
+  },
+  {
+    "model": "core.case",
+    "pk": 3,
+    "fields": {
+      "complaint": 3,
+      "regulator": "BoU",
+      "status": "open",
+      "notes": "Auto-routed from case_type=interest_rate.",
+      "created_at": "2026-06-05T11:00:00Z"
+    }
+  },
+  {
+    "model": "core.case",
+    "pk": 4,
+    "fields": {
+      "complaint": 4,
+      "regulator": "UCC",
+      "status": "under_review",
+      "notes": "Auto-routed from case_type=data_privacy.",
+      "created_at": "2026-06-06T11:00:00Z"
+    }
+  },
+  {
+    "model": "core.case",
+    "pk": 5,
+    "fields": {
+      "complaint": 5,
+      "regulator": "BoU",
+      "status": "resolved",
+      "notes": "Auto-routed from case_type=hidden_fees.",
+      "created_at": "2026-06-07T11:00:00Z"
+    }
+  },
+  {
+    "model": "core.case",
+    "pk": 6,
+    "fields": {
+      "complaint": 6,
+      "regulator": "FIA",
+      "status": "open",
+      "notes": "Auto-routed from case_type=fraud.",
+      "created_at": "2026-06-08T11:00:00Z"
+    }
+  },
+  {
+    "model": "core.case",
+    "pk": 7,
+    "fields": {
+      "complaint": 7,
+      "regulator": "UMRA",
+      "status": "under_review",
+      "notes": "Auto-routed from case_type=unlicensed_lender.",
+      "created_at": "2026-06-09T11:00:00Z"
+    }
+  },
+  {
+    "model": "core.case",
+    "pk": 8,
+    "fields": {
+      "complaint": 8,
+      "regulator": "BoU",
+      "status": "resolved",
+      "notes": "Auto-routed from case_type=interest_rate.",
+      "created_at": "2026-06-10T11:00:00Z"
+    }
+  },
+  {
+    "model": "core.case",
+    "pk": 9,
+    "fields": {
+      "complaint": 9,
+      "regulator": "UCC",
+      "status": "open",
+      "notes": "Auto-routed from case_type=harassment_sms.",
+      "created_at": "2026-06-11T11:00:00Z"
+    }
+  },
+  {
+    "model": "core.case",
+    "pk": 10,
+    "fields": {
+      "complaint": 10,
+      "regulator": "BoU",
+      "status": "under_review",
+      "notes": "Auto-routed from case_type=hidden_fees.",
+      "created_at": "2026-06-12T11:00:00Z"
+    }
+  },
+  {
+    "model": "core.case",
+    "pk": 11,
+    "fields": {
+      "complaint": 11,
+      "regulator": "UMRA",
+      "status": "resolved",
+      "notes": "Auto-routed from case_type=unlicensed_lender.",
+      "created_at": "2026-06-13T11:00:00Z"
+    }
+  },
+  {
+    "model": "core.case",
+    "pk": 12,
+    "fields": {
+      "complaint": 12,
+      "regulator": "FIA",
+      "status": "open",
+      "notes": "Auto-routed from case_type=fraud.",
+      "created_at": "2026-06-14T11:00:00Z"
+    }
+  },
+  {
+    "model": "core.case",
+    "pk": 13,
+    "fields": {
+      "complaint": 13,
+      "regulator": "UCC",
+      "status": "under_review",
+      "notes": "Auto-routed from case_type=data_privacy.",
+      "created_at": "2026-06-15T11:00:00Z"
+    }
+  },
+  {
+    "model": "core.case",
+    "pk": 14,
+    "fields": {
+      "complaint": 14,
+      "regulator": "UCC",
+      "status": "resolved",
+      "notes": "Auto-routed from case_type=harassment_sms.",
+      "created_at": "2026-06-16T11:00:00Z"
+    }
+  },
+  {
+    "model": "core.case",
+    "pk": 15,
+    "fields": {
+      "complaint": 15,
+      "regulator": "BoU",
+      "status": "open",
+      "notes": "Auto-routed from case_type=interest_rate.",
+      "created_at": "2026-06-17T11:00:00Z"
+    }
+  },
+  {
+    "model": "core.case",
+    "pk": 16,
+    "fields": {
+      "complaint": 16,
+      "regulator": "BoU",
+      "status": "under_review",
+      "notes": "Auto-routed from case_type=hidden_fees.",
+      "created_at": "2026-06-18T11:00:00Z"
+    }
+  },
+  {
+    "model": "core.case",
+    "pk": 17,
+    "fields": {
+      "complaint": 17,
+      "regulator": "FIA",
+      "status": "resolved",
+      "notes": "Auto-routed from case_type=fraud.",
+      "created_at": "2026-06-19T11:00:00Z"
+    }
+  },
+  {
+    "model": "core.case",
+    "pk": 18,
+    "fields": {
+      "complaint": 18,
+      "regulator": "UMRA",
+      "status": "open",
+      "notes": "Auto-routed from case_type=unlicensed_lender.",
+      "created_at": "2026-06-20T11:00:00Z"
+    }
+  }
+]

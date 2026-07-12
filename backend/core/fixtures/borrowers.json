@@ -1,0 +1,17 @@
+[
+  {"model": "core.borrower", "pk": 1, "fields": {"full_name": "Akello Grace", "phone_number": "+256701000001", "district": "Kampala", "created_at": "2026-02-01T08:00:00Z"}},
+  {"model": "core.borrower", "pk": 2, "fields": {"full_name": "Byaruhanga Peter", "phone_number": "+256701000002", "district": "Kampala", "created_at": "2026-02-01T08:05:00Z"}},
+  {"model": "core.borrower", "pk": 3, "fields": {"full_name": "Namuli Sarah", "phone_number": "+256701000003", "district": "Wakiso", "created_at": "2026-02-01T08:10:00Z"}},
+  {"model": "core.borrower", "pk": 4, "fields": {"full_name": "Okello Daniel", "phone_number": "+256701000004", "district": "Gulu", "created_at": "2026-02-01T08:15:00Z"}},
+  {"model": "core.borrower", "pk": 5, "fields": {"full_name": "Nakato Joan", "phone_number": "+256701000005", "district": "Mbarara", "created_at": "2026-02-01T08:20:00Z"}},
+  {"model": "core.borrower", "pk": 6, "fields": {"full_name": "Ssebunya Robert", "phone_number": "+256701000006", "district": "Kampala", "created_at": "2026-02-01T08:25:00Z"}},
+  {"model": "core.borrower", "pk": 7, "fields": {"full_name": "Atim Prossy", "phone_number": "+256701000007", "district": "Gulu", "created_at": "2026-02-01T08:30:00Z"}},
+  {"model": "core.borrower", "pk": 8, "fields": {"full_name": "Mugisha Alex", "phone_number": "+256701000008", "district": "Mbarara", "created_at": "2026-02-01T08:35:00Z"}},
+  {"model": "core.borrower", "pk": 9, "fields": {"full_name": "Nabirye Christine", "phone_number": "+256701000009", "district": "Jinja", "created_at": "2026-02-01T08:40:00Z"}},
+  {"model": "core.borrower", "pk": 10, "fields": {"full_name": "Wanyama Isaac", "phone_number": "+256701000010", "district": "Mbale", "created_at": "2026-02-01T08:45:00Z"}},
+  {"model": "core.borrower", "pk": 11, "fields": {"full_name": "Aciro Lillian", "phone_number": "+256701000011", "district": "Arua", "created_at": "2026-02-01T08:50:00Z"}},
+  {"model": "core.borrower", "pk": 12, "fields": {"full_name": "Kato Emmanuel", "phone_number": "+256701000012", "district": "Wakiso", "created_at": "2026-02-01T08:55:00Z"}},
+  {"model": "core.borrower", "pk": 13, "fields": {"full_name": "Nansubuga Ritah", "phone_number": "+256701000013", "district": "Masaka", "created_at": "2026-02-01T09:00:00Z"}},
+  {"model": "core.borrower", "pk": 14, "fields": {"full_name": "Tumusiime Brian", "phone_number": "+256701000014", "district": "Kampala", "created_at": "2026-02-01T09:05:00Z"}},
+  {"model": "core.borrower", "pk": 15, "fields": {"full_name": "Adongo Sharon", "phone_number": "+256701000015", "district": "Gulu", "created_at": "2026-02-01T09:10:00Z"}}
+]
