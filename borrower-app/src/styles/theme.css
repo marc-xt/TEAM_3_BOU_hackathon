@@ -361,6 +361,652 @@ body {
   font-size: 0.9rem;
 }
 
+/* ==========================================================================
+   Top-level section nav (added for Pre-Loan Advisory / Financial Planner /
+   Impact & Predictions / Alerts & Safeguards).
+   ========================================================================== */
+.app-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+  justify-content: center;
+}
+
+.app-nav__item {
+  min-height: var(--tap-min);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-radius: 999px;
+  padding: var(--space-1) var(--space-3);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.app-nav__item:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.app-nav__item.is-active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+/* ==========================================================================
+   Shared form primitives used across advisory / planner / simulator features
+   ========================================================================== */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-3);
+  margin: var(--space-3) 0;
+}
+
+.form-grid label,
+.budget-income,
+.consent-type {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  font-weight: 600;
+}
+
+.form-grid input,
+.budget-income input,
+.consent-type input {
+  min-height: var(--tap-min);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font: inherit;
+  color: var(--color-text);
+  background: var(--color-surface);
+}
+
+.form-grid input:focus-visible,
+.budget-income input:focus-visible,
+.consent-type input:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.9rem;
+  color: var(--color-text);
+  font-weight: 400;
+  margin: var(--space-2) 0;
+}
+
+.checkbox-row input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--color-primary);
+}
+
+.btn-primary {
+  min-height: var(--tap-min);
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: var(--space-2) var(--space-4);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--color-primary-dark);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-ghost {
+  min-height: var(--tap-min);
+  background: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-2) var(--space-4);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-ghost:hover {
+  border-color: var(--color-primary);
+}
+
+.advisory__hint {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  margin: var(--space-2) 0;
+}
+
+.advice-list {
+  margin: var(--space-3) 0 0;
+  padding-left: var(--space-4);
+  color: var(--color-text);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.advice-list li {
+  margin-bottom: var(--space-1);
+}
+
+.callout {
+  border-left: 5px solid var(--color-primary);
+  background: var(--color-bg);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+  margin: var(--space-3) 0;
+  font-size: 0.9rem;
+}
+
+.callout ul {
+  margin: var(--space-1) 0 0;
+  padding-left: var(--space-4);
+}
+
+.callout--caution {
+  border-left-color: var(--tone-emerging);
+  background: var(--tone-emerging-bg);
+  color: var(--tone-emerging);
+}
+
+.callout--info {
+  border-left-color: var(--bou-maroon);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.callout--high {
+  border-left-color: var(--tone-high);
+  background: var(--tone-high-bg);
+  color: var(--tone-high);
+}
+
+/* ==========================================================================
+   Stepper (Pre-Loan Advisory)
+   ========================================================================== */
+.stepper {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-4);
+  gap: var(--space-2);
+  overflow-x: auto;
+}
+
+.stepper__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+}
+
+.stepper__dot {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-border);
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+.stepper__item.is-active .stepper__dot {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.stepper__item.is-done .stepper__dot {
+  background: var(--tone-stable);
+  border-color: var(--tone-stable);
+  color: #fff;
+}
+
+.stepper__item.is-active .stepper__label {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.advisory__panel {
+  animation: fadeIn 0.2s ease;
+}
+
+.advisory__nav {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.advisory__result {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+  flex-wrap: wrap;
+  margin: var(--space-3) 0;
+  padding: var(--space-3);
+  background: var(--color-bg);
+  border-radius: var(--radius);
+}
+
+.advisory__result-text {
+  flex: 1;
+  min-width: 200px;
+  font-size: 0.9rem;
+}
+
+.advisory__result-text p {
+  margin: var(--space-1) 0;
+}
+
+/* DTI gauge */
+.dti-gauge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+}
+
+.dti-gauge__svg {
+  width: 120px;
+  height: 70px;
+}
+
+.dti-gauge__value {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-top: -8px;
+}
+
+.dti-gauge__caption {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+/* Quiz */
+.quiz-question {
+  border: none;
+  padding: 0;
+  margin: 0 0 var(--space-4);
+}
+
+.quiz-question legend {
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+  padding: 0;
+}
+
+.quiz-option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  margin-bottom: var(--space-1);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.quiz-option:has(input:checked) {
+  border-color: var(--color-primary);
+  background: var(--tone-stable-bg);
+}
+
+.quiz-option input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary);
+}
+
+/* KID summary grid */
+.kid-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-3);
+  margin: var(--space-3) 0;
+}
+
+.kid-grid dt {
+  color: var(--color-muted);
+  font-size: 0.8rem;
+}
+
+.kid-grid dd {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   Tabbed feature shell reused by Financial Planner / Impact Simulator /
+   Ongoing Advisory
+   ========================================================================== */
+.planner__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-2);
+}
+
+.planner__tab {
+  min-height: 40px;
+  background: transparent;
+  border: none;
+  color: var(--color-muted);
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: var(--space-1) var(--space-3);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.planner__tab.is-active {
+  background: var(--bou-gold);
+  color: var(--text-dark);
+}
+
+.planner-block {
+  animation: fadeIn 0.2s ease;
+}
+
+.planner-block h3 {
+  margin: 0 0 var(--space-2);
+  color: var(--color-primary);
+}
+
+.planner-block h4,
+.chart-title {
+  margin: var(--space-3) 0 var(--space-2);
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+/* Budget planner */
+.budget-rows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: var(--space-3) 0;
+}
+
+.budget-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.budget-row__label {
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.budget-row input {
+  width: 140px;
+  min-height: var(--tap-min);
+  padding: var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font: inherit;
+  text-align: right;
+}
+
+.budget-summary {
+  display: flex;
+  gap: var(--space-4);
+  border-left: 6px solid var(--color-primary);
+  background: var(--color-bg);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.budget-summary dt {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+.budget-summary dd {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* Debt dashboard */
+.debt-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-3);
+  margin: var(--space-3) 0;
+}
+
+.debt-summary__card {
+  background: var(--color-bg);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+  text-align: center;
+}
+
+.debt-summary__card dt {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+.debt-summary__card dd {
+  margin: var(--space-1) 0 0;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--color-primary);
+}
+
+.debt-list,
+.alert-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-3) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.debt-list__item,
+.alert-list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-left: 5px solid var(--color-primary);
+  border-radius: var(--radius);
+}
+
+.debt-list__due {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+.debt-list__amount {
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+/* Savings tracker */
+.progress-track {
+  width: 100%;
+  height: 14px;
+  background: var(--color-border);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: var(--space-2) 0;
+}
+
+.progress-track__fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--bou-gold), var(--tone-stable));
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+/* Literacy hub */
+.literacy-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.lang-toggle {
+  display: flex;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.lang-toggle button {
+  border: none;
+  background: var(--color-surface);
+  padding: var(--space-1) var(--space-3);
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.lang-toggle button.is-active {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.accordion {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-3) 0 0;
+}
+
+.accordion__item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.accordion__trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: var(--space-3) 0;
+  font: inherit;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  color: var(--color-text);
+}
+
+.accordion__body {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  padding-bottom: var(--space-3);
+  line-height: 1.5;
+}
+
+/* Impact calculator / predictions */
+.impact-result {
+  border-radius: var(--radius);
+  padding: var(--space-3);
+  margin: var(--space-3) 0;
+}
+
+.impact-result__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-3);
+}
+
+.impact-result__grid dt {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+.impact-result__grid dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+.impact-result__verdict {
+  margin: var(--space-3) 0 0;
+  font-weight: 700;
+}
+
+.line-chart {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.risk-meter {
+  margin: var(--space-3) 0;
+}
+
+.risk-meter__header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: var(--space-1);
+}
+
+.risk-meter__track {
+  width: 100%;
+  height: 12px;
+  background: var(--color-border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.risk-meter__fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* Mobile-first: the borrower app is phone-facing. Layout is a single fluid column at any
    width; below 480px we tighten spacing, scale type down, and let controls go full-width so
    nothing overflows a 320px screen. */
@@ -400,5 +1046,50 @@ body {
 
   .disclosure-card__row dd {
     text-align: left;
+  }
+
+  .app-nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: var(--space-1);
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .advisory__nav {
+    flex-direction: column-reverse;
+  }
+
+  .advisory__nav .btn-primary,
+  .advisory__nav .btn-ghost {
+    width: 100%;
+    text-align: center;
+  }
+
+  .budget-row {
+    flex-wrap: wrap;
+  }
+
+  .budget-row input {
+    width: 100%;
+  }
+
+  .budget-summary {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .planner__tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+
+  .debt-list__item,
+  .alert-list__item {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

@@ -5,6 +5,7 @@ These are imported everywhere they're used (models, serializers, scoring
 logic, routing logic) and never re-typed as string literals elsewhere,
 per the cross-app compatibility rules in the task sheet.
 """
+from decimal import Decimal
 
 # Stress bands returned by stress_indicator.py
 STRESS_STABLE = "Stable"
@@ -51,3 +52,30 @@ CASE_TYPE_CHOICES = [
 VIEW_BOU = "bou"
 VIEW_UMRA = "umra"
 VALID_DASHBOARD_VIEWS = [VIEW_BOU, VIEW_UMRA]
+
+# Currency for all monetary fields returned by the API (single-market MVP;
+# revisit if CreditShield ever supports lenders outside Uganda).
+CURRENCY_UGX = "UGX"
+
+# Regulated annual interest rate benchmark used by apr_calculator.py to flag
+# high-cost loans. Sourced from Legal Notice No. 21 of 2024 (Uganda Ministry
+# of Finance, Planning and Economic Development), issued under the Tier 4
+# Microfinance Institutions and Money Lenders Act (Cap. 61), which caps
+# money-lender interest at 2.8% per month / 33.6% per annum. This is the
+# interest-rate cap on the principal, not a fee-inclusive APR cap set by
+# BoU/UMRA specifically for digital lenders -- treat it as the reference
+# benchmark for the demo and revisit if UMRA publishes a digital-lending
+# specific cap.
+REGULATED_APR_CAP_PCT = Decimal("33.6")
+
+# apr_calculator.py flag tags surfaced on /api/parse-sms/ responses.
+FLAG_HIGH_COST = "HIGH_COST"
+FLAG_UNLICENSED = "UNLICENSED"
+FLAG_UNVERIFIED_LENDER = "UNVERIFIED_LENDER"
+FLAG_FLAGGED_LENDER = "FLAGGED_LENDER"
+FLAG_DEBT_STACKING = "DEBT_STACKING"
+
+# Debt-stacking early warning (views.parse_sms_view): a borrower is warned
+# when they already hold this many unpaid loans at the moment a new loan
+# SMS is parsed.
+DEBT_STACKING_UNPAID_THRESHOLD = 2
