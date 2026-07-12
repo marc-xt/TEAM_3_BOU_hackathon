@@ -1,4 +1,3 @@
-from django.db.models import Count, Sum
 from django.db.models.functions import TruncDate
 from django.shortcuts import get_object_or_404
 from rest_framework import status
