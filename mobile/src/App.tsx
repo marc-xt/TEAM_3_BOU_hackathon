@@ -39,7 +39,7 @@ export default function App() {
     (async () => {
       await initI18n();
       setOnboarded((await AsyncStorage.getItem(ONBOARDED_KEY)) === "true");
-      const ok = await authenticate("Unlock CreditShield");
+      const ok = await authenticate("Unlock BorrowWise");
       setLocked(!ok);
       setReady(true);
     })();
@@ -52,7 +52,7 @@ export default function App() {
         lastBg.current = Date.now();
       } else if (state === "active" && (await shouldRelock(lastBg.current))) {
         setLocked(true);
-        const ok = await authenticate("Unlock CreditShield");
+        const ok = await authenticate("Unlock BorrowWise");
         setLocked(!ok);
       }
     });
@@ -84,8 +84,8 @@ export default function App() {
   if (locked) {
     return (
       <View style={styles.center}>
-        <Text style={styles.lockTitle}>CreditShield</Text>
-        <Pressable style={styles.unlock} onPress={async () => setLocked(!(await authenticate("Unlock CreditShield")))}>
+        <Text style={styles.lockTitle}>BorrowWise</Text>
+        <Pressable style={styles.unlock} onPress={async () => setLocked(!(await authenticate("Unlock BorrowWise")))}>
           <Text style={styles.unlockText}>Unlock</Text>
         </Pressable>
       </View>
@@ -101,7 +101,7 @@ export default function App() {
             name="Home"
             component={HomeScreen}
             options={({ navigation }) => ({
-              title: "CreditShield",
+              title: "BorrowWise",
               headerRight: () => (
                 <Pressable onPress={() => navigation.navigate("Settings")} hitSlop={12}>
                   <Text style={styles.gear}>⚙︎</Text>

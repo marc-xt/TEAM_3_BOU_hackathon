@@ -1,8 +1,8 @@
 {
-  "app": { "title": "CreditShield", "subtitle": "Understand a loan before you accept it." },
+  "app": { "title": "BorrowWise", "subtitle": "Understand a loan before you accept it." },
   "onboarding": {
     "consentTitle": "Read your loans, on your phone",
-    "consentBody": "CreditShield reads MoKash and Wewole loan messages on this device to show you what each loan really costs and warn you before you owe too much. Nothing is sent anywhere without your say-so.",
+    "consentBody": "BorrowWise reads MoKash and Wewole loan messages on this device to show you what each loan really costs and warn you before you owe too much. Nothing is sent anywhere without your say-so.",
     "grantSms": "Allow reading loan SMS",
     "language": "Language",
     "continue": "Continue"
@@ -72,7 +72,7 @@
     "notifications": "Notifications",
     "dueReminders": "Due-date reminders",
     "risingAlerts": "Rising-balance alerts",
-    "backend": "CreditShield backend",
+    "backend": "BorrowWise backend",
     "apiBase": "Server address",
     "borrowerId": "Borrower ID",
     "permissions": "Permissions",

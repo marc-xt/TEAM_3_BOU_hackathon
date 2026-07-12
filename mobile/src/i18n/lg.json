@@ -1,8 +1,8 @@
 {
-  "app": { "title": "CreditShield", "subtitle": "Tegeera obwewozi nga tonnabuggya." },
+  "app": { "title": "BorrowWise", "subtitle": "Tegeera obwewozi nga tonnabuggya." },
   "onboarding": {
     "consentTitle": "Soma obwewozi bwo, ku ssimu yo",
-    "consentBody": "CreditShield esoma obubaka bwa MoKash ne Wewole ku ssimu eno okulaga buli bwewozi bwe bugula ddala, n'okukulabula nga tonnaba kubanjibwa nnyo. Tewali kiweebwayo awatali kukkiriza kwo.",
+    "consentBody": "BorrowWise esoma obubaka bwa MoKash ne Wewole ku ssimu eno okulaga buli bwewozi bwe bugula ddala, n'okukulabula nga tonnaba kubanjibwa nnyo. Tewali kiweebwayo awatali kukkiriza kwo.",
     "grantSms": "Kkiriza okusoma SMS z'obwewozi",
     "language": "Olulimi",
     "continue": "Weyongereyo"
@@ -60,7 +60,7 @@
     "notifications": "Obubaka obw'okumanyisa",
     "dueReminders": "Okujjukiza ku nnaku z'okusasula",
     "risingAlerts": "Okulabula ku bibanja ebyeyongera",
-    "backend": "CreditShield server",
+    "backend": "BorrowWise server",
     "apiBase": "Endagiriro ya server",
     "borrowerId": "Namba y'omuwozi",
     "permissions": "Olukusa",

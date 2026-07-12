@@ -3,7 +3,7 @@ import { ExpoConfig } from "expo/config";
 // SMS reading + biometric lock need native code, so this app runs as an Expo
 // dev build (not Expo Go). Android-only for SMS.
 const config: ExpoConfig = {
-  name: "CreditShield",
+  name: "BorrowWise",
   slug: "borrowise",
   version: "1.0.0",
   orientation: "portrait",
@@ -25,7 +25,7 @@ const config: ExpoConfig = {
   },
   ios: {
     supportsTablet: false,
-    infoPlist: { NSFaceIDUsageDescription: "Unlock CreditShield with Face ID." },
+    infoPlist: { NSFaceIDUsageDescription: "Unlock BorrowWise with Face ID." },
   },
   plugins: [
     "expo-notifications",
