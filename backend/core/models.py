@@ -1,5 +1,5 @@
+from django.conf import settings
 from django.db import models
-
 from core.apr_calculator import AprCalculationError, evaluate_loan_cost
 from core.constants import (
     CASE_TYPE_CHOICES,
@@ -32,6 +32,20 @@ class Borrower(models.Model):
     full_name = models.CharField(max_length=150)
     phone_number = models.CharField(max_length=20, unique=True)
     district = models.CharField(max_length=100, blank=True)
+    # Links this borrower to a login-capable Django account so the new
+    # Financial Planning module (planning app) can authenticate requests
+    # with JWT and scope every planning object (consent, budgets, DSRs,
+    # ...) to exactly the borrower who owns it. Nullable/unique because
+    # existing seeded borrowers (SMS-parsed, no login) predate this field
+    # and must not be broken by the migration; a borrower without a linked
+    # account simply cannot use the authenticated planning endpoints yet.
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        related_name="borrower_profile",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+    )
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -149,4 +163,5 @@ class StressAssessment(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
+        
         return f"{self.borrower.full_name}: {self.band}"
