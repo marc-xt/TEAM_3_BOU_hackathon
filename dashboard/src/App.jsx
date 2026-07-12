@@ -5,7 +5,7 @@ import UMRAView from './views/UMRAView';
 import './styles/theme.css';
 
 /**
- * App — root component for the CreditShield AI Regulator Dashboard.
+ * App — root component for the BorrowWise Regulator Dashboard.
  *
  * Manages the active regulator view (BoU/UMRA) and renders the
  * appropriate view component with the role toggle at the top.
@@ -18,7 +18,7 @@ function App() {
             {/* Header */}
             <header style={styles.header}>
                 <div style={styles.headerLeft}>
-                    <h1 style={styles.title}>CreditShield AI</h1>
+                    <h1 style={styles.title}>BorrowWise</h1>
                     <span style={styles.subtitle}>Regulator Dashboard</span>
                 </div>
                 <div style={styles.headerRight}>
@@ -35,7 +35,7 @@ function App() {
             <footer style={styles.footer}>
                 <span>Bank of Uganda Digital Lending Hackathon 2026</span>
                 <span style={styles.footerDivider}>|</span>
-                <span>CreditShield AI — Dev 2 Dashboard</span>
+                <span>BorrowWise — Dev 2 Dashboard</span>
             </footer>
         </div>
     );

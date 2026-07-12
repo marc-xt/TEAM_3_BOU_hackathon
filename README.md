@@ -1,4 +1,4 @@
-# CreditShield AI — Backend (Dev 1)
+# BorrowWise — Backend (Dev 1)
 
 Django REST Framework API. Owns `core/` (models, SMS parser, effective-APR
 calculator, stress scoring, case routing) and the contract endpoints

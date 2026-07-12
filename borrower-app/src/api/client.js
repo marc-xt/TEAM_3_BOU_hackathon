@@ -34,7 +34,7 @@ export async function parseSms(text) {
     );
     if (!match) {
       throw new Error(
-        "Could not analyse this message offline. Connect to the CreditShield backend to parse new SMS."
+        "Could not analyse this message offline. Connect to the BorrowWise backend to parse new SMS."
       );
     }
     return { data: match.parsed, source: "mock" };

@@ -1,4 +1,4 @@
-# CreditShield AI — Regulator Dashboard (Dev 2)
+# BorrowWise — Regulator Dashboard (Dev 2)
 
 React dashboard for BoU and UMRA regulators: complaint clusters, exposure
 heatmap, complaint trend, and a role-scoped case list.

@@ -1,9 +1,9 @@
-# CreditShield Mobile — Borrower App
+# BorrowWise Mobile — Borrower App
 
-Native Android borrower client for CreditShield (Team 3, BoU Theme 1). Reads real
+Native Android borrower client for BorrowWise (Team 3, BoU Theme 1). Reads real
 **MoKash / Wewole** loan SMS on the device, parses each loan **on-device**, and
 shows a plain-language disclosure + borrowing-health, with due-date and
-rising-balance notifications and an app lock. Integrates with the CreditShield
+rising-balance notifications and an app lock. Integrates with the BorrowWise
 Django backend for health scoring and loan reporting.
 
 ## Why a dev build (not Expo Go)
@@ -29,7 +29,7 @@ Grant the **SMS** and **Notifications** permissions on first launch.
    cd ../backend && python manage.py runserver 0.0.0.0:8000
    ```
    Add your laptop's LAN IP to `DJANGO_ALLOWED_HOSTS` in `backend/.env`.
-2. In the app: **Settings → CreditShield backend → Server address** →
+2. In the app: **Settings → BorrowWise backend → Server address** →
    `http://<LAN-IP>:8000/api`, set **Borrower ID**, Save.
 
 If the backend is unreachable, borrowing-health falls back to on-device scoring
@@ -37,7 +37,7 @@ If the backend is unreachable, borrowing-health falls back to on-device scoring
 
 ## Demo without real SMS
 
-**Settings → Load sample loans (demo)** runs the CreditShield reference SMS
+**Settings → Load sample loans (demo)** runs the BorrowWise reference SMS
 (MoKash, Wewole, a predatory offer, a repayment) through the exact same parser
 and populates the dashboard — useful for a demo when you don't want to wait for
 real messages.
@@ -66,7 +66,7 @@ src/
 ```
 
 The parser + interest logic is ported from the SenteCheck Android app and
-verified against the real MoMo SMS formats and the CreditShield demo strings.
+verified against the real MoMo SMS formats and the BorrowWise demo strings.
 
 ## Backend integration note
 
