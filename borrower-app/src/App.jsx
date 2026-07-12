@@ -7,6 +7,7 @@ import LoanImpactSimulator from "./features/LoanImpactSimulator";
 import FinancialPlanner from "./features/FinancialPlanner";
 import OngoingAdvisory from "./features/OngoingAdvisory";
 import { parseSms, getStress, getSmsSamples } from "./api/client";
+import ChatbotWidget from "./components/ChatbotWidget";
 
 // Every API-driven section follows the same loading -> data -> error shape (§8.4).
 const initialAsyncState = { status: "idle", data: null, error: null, source: null };
