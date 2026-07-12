@@ -5,7 +5,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from core.constants import VIEW_BOU, VIEW_UMRA
-from core.models import Borrower, Case, Complaint, Lender
+from core.models import Borrower, Case, Lender
 from core.serializers import (
     CaseSerializer,
     ParseSmsRequestSerializer,

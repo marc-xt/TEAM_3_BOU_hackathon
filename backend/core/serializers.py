@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from core.constants import VALID_DASHBOARD_VIEWS
-from core.models import Borrower, Case, Complaint, Lender, Loan
+from core.models import Borrower, Case, Lender, Loan
 
 
 class LenderSerializer(serializers.ModelSerializer):
