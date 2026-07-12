@@ -1,0 +1,26 @@
+{
+  "source": "SAMPLE / demo seed — replace with the official UMRA unlicensed-lender list (or serve it from the CreditShield backend). Entries below are illustrative for the demo, not accusations against real companies.",
+  "apps": [
+    {
+      "name": "QuickCash UG",
+      "packageId": "ug.quickcash.loan",
+      "aliases": ["quickcash", "quick cash"],
+      "reason": "Not on UMRA's licensed digital-lender register.",
+      "regulator": "UMRA"
+    },
+    {
+      "name": "FastLoan",
+      "packageId": "com.fastloan.ug",
+      "aliases": ["fast loan", "fastloan"],
+      "reason": "Flagged as an unlicensed high-cost lender.",
+      "regulator": "UMRA"
+    },
+    {
+      "name": "SpeedyShilling",
+      "packageId": "com.speedyshilling.app",
+      "aliases": ["speedy shilling"],
+      "reason": "Reported for predatory terms and harassment.",
+      "regulator": "UMRA"
+    }
+  ]
+}

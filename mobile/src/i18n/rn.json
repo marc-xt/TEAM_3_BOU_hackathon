@@ -1,0 +1,73 @@
+{
+  "app": { "title": "CreditShield", "subtitle": "Yetegyereze ecyahi otakacitwaireho." },
+  "onboarding": {
+    "consentTitle": "Shoma ebyahi byawe, aha simu yaawe",
+    "consentBody": "CreditShield neeshoma obubaka bwa MoKash na Wewole aha simu egi kukworeka buri cyahi oku kirikugura, n'okukurabura otakaba noobanzibwa munonga. Tihariho ekirikuheebwa hatariho okwikiriza kwawe.",
+    "grantSms": "Ikiriza kushoma SMS z'ebyahi",
+    "language": "Orurimi",
+    "continue": "Guma omu maisho"
+  },
+  "home": {
+    "health": "Embeera y'ebyahi byawe",
+    "activeLoans": "Ebyahi ebikiriho",
+    "noLoans": "Tihariho ecyahi ekizooriirwe",
+    "noLoansAction": "Garukamu osherûre omu bubaka bwawe",
+    "rising": "Ebyahi byawe nibyeyongyera",
+    "refresh": "Garukamu osherûre"
+  },
+  "loan": {
+    "youReceive": "Eki oteekwa",
+    "youRepay": "Eki oshashura",
+    "dueDate": "Eizooba ry'okushashura",
+    "term": "Obwire",
+    "cost": "Omuhendo gw'ecyahi eki",
+    "costValue": "{{pct}}% aha eki ohainza",
+    "days": "Ennaku {{n}}",
+    "daysLeft": "Ennaku {{n}} ezisigaireho",
+    "dueToday": "Nishashurwa erizooba",
+    "overdue": "Obwire bwahwaho",
+    "outstanding": "Eki kikyabanzibwa",
+    "licensed": "Omuhaisi aine layisinsi",
+    "unlicensed": "Tiine layisinsi",
+    "highCost": "Ecyahi cy'omuhendo gwa haiguru",
+    "annualized": "Omuhendo gwa buri mwaka"
+  },
+  "flags": {
+    "HIGH_COST": "Omuhendo gwa haiguru",
+    "UNLICENSED": "Tiine layisinsi",
+    "UNSOLICITED": "Ekitasabiirwe",
+    "REPAYMENT": "Okushashura"
+  },
+  "health": {
+    "Stable": {
+      "headline": "Ori omu mbeera nungi",
+      "nudge": "Okushashura kwawe nikureeba nk'okurikubaasika. Haina eki orikubaasa kushashura."
+    },
+    "Emerging Risk": {
+      "headline": "Obumanyiso bw'akabi nikaija",
+      "nudge": "Ebibanja byawe nibyeyongyera. Teekateeka aha kutandika kuruga aha kuhaina ebihyaka."
+    },
+    "High Risk": {
+      "headline": "Akabi k'okubanzibwa munonga",
+      "nudge": "Okutwara ecyahi eki nikibaasa kukuhingura aha eki orikubaasa kushashura. Gamba n'omuhaisi waawe otakaba noyongyera kuhaina."
+    }
+  },
+  "settings": {
+    "title": "Enteekateeka",
+    "language": "Orurimi",
+    "appLock": "Orufunikiro rwa app",
+    "appLockDesc": "Saba orukumu nari PIN kwiguraho app",
+    "notifications": "Obubaka bw'okumanyisa",
+    "dueReminders": "Okwijukya aha nnaku z'okushashura",
+    "risingAlerts": "Okurabura aha bibanja ebirikweyongyera",
+    "backend": "CreditShield server",
+    "apiBase": "Endagiriro ya server",
+    "borrowerId": "Namba y'omuhaisi",
+    "permissions": "Obushobozi",
+    "smsGranted": "Obushobozi bwa SMS bwahairwe",
+    "smsDenied": "Obushobozi bwa SMS tibukahairwe",
+    "grantSms": "Ha obushobozi bwa SMS",
+    "save": "Bika"
+  },
+  "common": { "on": "Ego", "off": "Ngaaha", "back": "Garuka" }
+}

@@ -1,0 +1,73 @@
+{
+  "app": { "title": "CreditShield", "subtitle": "Tegeera obwewozi nga tonnabuggya." },
+  "onboarding": {
+    "consentTitle": "Soma obwewozi bwo, ku ssimu yo",
+    "consentBody": "CreditShield esoma obubaka bwa MoKash ne Wewole ku ssimu eno okulaga buli bwewozi bwe bugula ddala, n'okukulabula nga tonnaba kubanjibwa nnyo. Tewali kiweebwayo awatali kukkiriza kwo.",
+    "grantSms": "Kkiriza okusoma SMS z'obwewozi",
+    "language": "Olulimi",
+    "continue": "Weyongereyo"
+  },
+  "home": {
+    "health": "Embeera y'obwewozi bwo",
+    "activeLoans": "Obwewozi obukyaliwo",
+    "noLoans": "Tewali bwewozi bunazuuliddwa",
+    "noLoansAction": "Ddamu onoonye mu bubaka bwo",
+    "rising": "Obwewozi bwo bweyongera",
+    "refresh": "Ddamu onoonye"
+  },
+  "loan": {
+    "youReceive": "Ky'ofuna",
+    "youRepay": "Ky'osasula",
+    "dueDate": "Olunaku lw'okusasula",
+    "term": "Ebbanga",
+    "cost": "Omuwendo gw'obwewozi buno",
+    "costValue": "{{pct}}% ku ky'owola",
+    "days": "Ennaku {{n}}",
+    "daysLeft": "Ennaku {{n}} ezisigadde",
+    "dueToday": "Lusasulwa leero",
+    "overdue": "Lwayise ekiseera",
+    "outstanding": "Ekikyabanjibwa",
+    "licensed": "Omuwozi alina layisinsi",
+    "unlicensed": "Talina layisinsi",
+    "highCost": "Bwewozi bwa muwendo gwa waggulu",
+    "annualized": "Omuwendo gwa buli mwaka"
+  },
+  "flags": {
+    "HIGH_COST": "Muwendo gwa waggulu",
+    "UNLICENSED": "Talina layisinsi",
+    "UNSOLICITED": "Butasabiddwa",
+    "REPAYMENT": "Okusasula"
+  },
+  "health": {
+    "Stable": {
+      "headline": "Oli mu mbeera nnungi",
+      "nudge": "Okusasula kwo kulabika nga kusoboka. Weewoze byokka by'osobola okusasula."
+    },
+    "Emerging Risk": {
+      "headline": "Obubonero bw'akabi akajja",
+      "nudge": "Ebibanja byo byeyongera. Lowooza ku kulekera awo okwewola okuggya nga obwewozi obukyaliwo obunnamu."
+    },
+    "High Risk": {
+      "headline": "Akabi ak'okubanjibwa ennyo",
+      "nudge": "Okutwala obwewozi buno kuyinza okukusukka ku ky'osobola okusasula. Yogera n'omuwozi wo nga tonnaba kwongera kwewola."
+    }
+  },
+  "settings": {
+    "title": "Enteekateeka",
+    "language": "Olulimi",
+    "appLock": "Ekkuffulu lya app",
+    "appLockDesc": "Saba olunwe oba PIN okuggulawo app",
+    "notifications": "Obubaka obw'okumanyisa",
+    "dueReminders": "Okujjukiza ku nnaku z'okusasula",
+    "risingAlerts": "Okulabula ku bibanja ebyeyongera",
+    "backend": "CreditShield server",
+    "apiBase": "Endagiriro ya server",
+    "borrowerId": "Namba y'omuwozi",
+    "permissions": "Olukusa",
+    "smsGranted": "Olukusa lwa SMS luweereddwa",
+    "smsDenied": "Olukusa lwa SMS terunnaweebwa",
+    "grantSms": "Wa olukusa lwa SMS",
+    "save": "Tereka"
+  },
+  "common": { "on": "Yee", "off": "Nedda", "back": "Ddayo" }
+}

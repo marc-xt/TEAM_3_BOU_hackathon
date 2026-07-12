@@ -1,0 +1,85 @@
+{
+  "app": { "title": "CreditShield", "subtitle": "Understand a loan before you accept it." },
+  "onboarding": {
+    "consentTitle": "Read your loans, on your phone",
+    "consentBody": "CreditShield reads MoKash and Wewole loan messages on this device to show you what each loan really costs and warn you before you owe too much. Nothing is sent anywhere without your say-so.",
+    "grantSms": "Allow reading loan SMS",
+    "language": "Language",
+    "continue": "Continue"
+  },
+  "home": {
+    "health": "Your borrowing health",
+    "activeLoans": "Active loans",
+    "noLoans": "No loans found yet",
+    "noLoansAction": "Refresh to scan your messages",
+    "rising": "Your borrowing is climbing",
+    "refresh": "Refresh"
+  },
+  "loan": {
+    "youReceive": "You receive",
+    "youRepay": "You repay",
+    "dueDate": "Due date",
+    "term": "Term",
+    "cost": "Cost of this loan",
+    "costValue": "{{pct}}% of what you borrow",
+    "days": "{{n}} days",
+    "daysLeft": "{{n}} days left",
+    "dueToday": "Due today",
+    "overdue": "Overdue",
+    "outstanding": "Still owed",
+    "licensed": "Licensed lender",
+    "unlicensed": "Not a licensed lender",
+    "highCost": "High-cost loan",
+    "offer": "Loan offer",
+    "wouldRepay": "you'd repay",
+    "annualized": "Yearly rate",
+    "daily": "Daily rate",
+    "dailyValue": "{{pct}}% per day",
+    "repayments": "Repayments",
+    "repaymentsHint": "What you've paid, and the balance after each.",
+    "date": "Date",
+    "paid": "Paid",
+    "balance": "Balance",
+    "disbursed": "disbursed",
+    "thinkTwice": "Think twice",
+    "thinkTwiceBody": "This offer is high-cost and comes from a lender not on UMRA's licensed register."
+  },
+  "flags": {
+    "HIGH_COST": "High cost",
+    "UNLICENSED": "Unlicensed",
+    "UNSOLICITED": "Unsolicited",
+    "REPAYMENT": "Repayment"
+  },
+  "health": {
+    "Stable": {
+      "headline": "You're on stable ground",
+      "nudge": "Your repayments look manageable. Keep borrowing only what you can comfortably repay."
+    },
+    "Emerging Risk": {
+      "headline": "Signs of emerging risk",
+      "nudge": "Your obligations are climbing. Consider pausing new loans until your current ones are cleared."
+    },
+    "High Risk": {
+      "headline": "High risk of over-indebtedness",
+      "nudge": "Taking on this loan could push you past what you can repay. Talk to your lender about restructuring before borrowing more."
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "appLock": "App lock",
+    "appLockDesc": "Require fingerprint or PIN to open the app",
+    "notifications": "Notifications",
+    "dueReminders": "Due-date reminders",
+    "risingAlerts": "Rising-balance alerts",
+    "backend": "CreditShield backend",
+    "apiBase": "Server address",
+    "borrowerId": "Borrower ID",
+    "permissions": "Permissions",
+    "smsGranted": "SMS access granted",
+    "smsDenied": "SMS access not granted",
+    "grantSms": "Grant SMS access",
+    "save": "Save"
+  },
+  "common": { "on": "On", "off": "Off", "back": "Back" }
+}
