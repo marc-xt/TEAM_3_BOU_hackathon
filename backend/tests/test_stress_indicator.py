@@ -1,7 +1,7 @@
 from django.test import TestCase
 
 from core.constants import STRESS_EMERGING_RISK, STRESS_HIGH_RISK, STRESS_STABLE
-from core.models import Borrower, Lender, Loan
+from core.models import Borrower
 from core.stress_indicator import (
     BorrowerLoanSummary,
     assess_borrower,
