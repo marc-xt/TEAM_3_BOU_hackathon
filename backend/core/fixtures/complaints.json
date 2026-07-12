@@ -1,0 +1,200 @@
+[
+  {
+    "model": "core.complaint",
+    "pk": 1,
+    "fields": {
+      "borrower": 1,
+      "lender": 1,
+      "case_type": "hidden_fees",
+      "description": "Borrower reports processing/service fees deducted that were never disclosed upfront.",
+      "created_at": "2026-06-02T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.complaint",
+    "pk": 2,
+    "fields": {
+      "borrower": 1,
+      "lender": 2,
+      "case_type": "harassment_sms",
+      "description": "Borrower reports repeated threatening SMS and calls to personal contacts after a missed payment.",
+      "created_at": "2026-06-03T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.complaint",
+    "pk": 3,
+    "fields": {
+      "borrower": 2,
+      "lender": 2,
+      "case_type": "interest_rate",
+      "description": "Borrower reports effective interest rate far above what was disclosed at disbursement.",
+      "created_at": "2026-06-04T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.complaint",
+    "pk": 4,
+    "fields": {
+      "borrower": 2,
+      "lender": 4,
+      "case_type": "data_privacy",
+      "description": "Borrower reports their contact list was accessed and used to shame them to friends/family.",
+      "created_at": "2026-06-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.complaint",
+    "pk": 5,
+    "fields": {
+      "borrower": 3,
+      "lender": 3,
+      "case_type": "hidden_fees",
+      "description": "Borrower reports processing/service fees deducted that were never disclosed upfront.",
+      "created_at": "2026-06-06T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.complaint",
+    "pk": 6,
+    "fields": {
+      "borrower": 4,
+      "lender": 1,
+      "case_type": "fraud",
+      "description": "Borrower reports a loan was disbursed and deducted from their account without their consent.",
+      "created_at": "2026-06-07T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.complaint",
+    "pk": 7,
+    "fields": {
+      "borrower": 4,
+      "lender": 5,
+      "case_type": "unlicensed_lender",
+      "description": "Borrower reports the lending app has no visible BoU license number on record.",
+      "created_at": "2026-06-08T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.complaint",
+    "pk": 8,
+    "fields": {
+      "borrower": 5,
+      "lender": 4,
+      "case_type": "interest_rate",
+      "description": "Borrower reports effective interest rate far above what was disclosed at disbursement.",
+      "created_at": "2026-06-09T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.complaint",
+    "pk": 9,
+    "fields": {
+      "borrower": 6,
+      "lender": 1,
+      "case_type": "harassment_sms",
+      "description": "Borrower reports repeated threatening SMS and calls to personal contacts after a missed payment.",
+      "created_at": "2026-06-10T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.complaint",
+    "pk": 10,
+    "fields": {
+      "borrower": 6,
+      "lender": 3,
+      "case_type": "hidden_fees",
+      "description": "Borrower reports processing/service fees deducted that were never disclosed upfront.",
+      "created_at": "2026-06-11T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.complaint",
+    "pk": 11,
+    "fields": {
+      "borrower": 7,
+      "lender": 5,
+      "case_type": "unlicensed_lender",
+      "description": "Borrower reports the lending app has no visible BoU license number on record.",
+      "created_at": "2026-06-12T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.complaint",
+    "pk": 12,
+    "fields": {
+      "borrower": 7,
+      "lender": 1,
+      "case_type": "fraud",
+      "description": "Borrower reports a loan was disbursed and deducted from their account without their consent.",
+      "created_at": "2026-06-13T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.complaint",
+    "pk": 13,
+    "fields": {
+      "borrower": 8,
+      "lender": 4,
+      "case_type": "data_privacy",
+      "description": "Borrower reports their contact list was accessed and used to shame them to friends/family.",
+      "created_at": "2026-06-14T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.complaint",
+    "pk": 14,
+    "fields": {
+      "borrower": 9,
+      "lender": 2,
+      "case_type": "harassment_sms",
+      "description": "Borrower reports repeated threatening SMS and calls to personal contacts after a missed payment.",
+      "created_at": "2026-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.complaint",
+    "pk": 15,
+    "fields": {
+      "borrower": 9,
+      "lender": 3,
+      "case_type": "interest_rate",
+      "description": "Borrower reports effective interest rate far above what was disclosed at disbursement.",
+      "created_at": "2026-06-16T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.complaint",
+    "pk": 16,
+    "fields": {
+      "borrower": 12,
+      "lender": 1,
+      "case_type": "hidden_fees",
+      "description": "Borrower reports processing/service fees deducted that were never disclosed upfront.",
+      "created_at": "2026-06-17T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.complaint",
+    "pk": 17,
+    "fields": {
+      "borrower": 14,
+      "lender": 2,
+      "case_type": "fraud",
+      "description": "Borrower reports a loan was disbursed and deducted from their account without their consent.",
+      "created_at": "2026-06-18T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.complaint",
+    "pk": 18,
+    "fields": {
+      "borrower": 14,
+      "lender": 5,
+      "case_type": "unlicensed_lender",
+      "description": "Borrower reports the lending app has no visible BoU license number on record.",
+      "created_at": "2026-06-19T10:00:00Z"
+    }
+  }
+]

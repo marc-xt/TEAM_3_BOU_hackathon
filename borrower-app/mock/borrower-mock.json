@@ -1,0 +1,104 @@
+{
+  "smsSamples": [
+    {
+      "id": "mokash-disbursement",
+      "label": "MoKash disbursement (licensed)",
+      "text": "Your MoKash loan of UGX 100,000 has been disbursed. Fee UGX 9,000. Outstanding UGX 109,000 due 25/07/2026.",
+      "parsed": {
+        "lender": "MoKash (MTN)",
+        "is_licensed": true,
+        "amount": 100000,
+        "currency": "UGX",
+        "fees": [{ "label": "Facilitation fee", "amount": 9000 }],
+        "total_repayable": 109000,
+        "due_date": "2026-07-25",
+        "term_days": 30,
+        "effective_rate_pct": 9.0,
+        "is_predatory": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "wewole-offer",
+      "label": "Wewole offer (licensed)",
+      "text": "Congratulations! UGX 150,000 Wewole loan credited. Repay UGX 168,000 within 14 days.",
+      "parsed": {
+        "lender": "Wewole (Airtel/JUMO)",
+        "is_licensed": true,
+        "amount": 150000,
+        "currency": "UGX",
+        "fees": [
+          { "label": "Facilitation fee", "amount": 15000 },
+          { "label": "Interest", "amount": 3000 }
+        ],
+        "total_repayable": 168000,
+        "due_date": "2026-07-25",
+        "term_days": 14,
+        "effective_rate_pct": 12.0,
+        "is_predatory": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "quickcash-predatory",
+      "label": "QuickCash offer (predatory)",
+      "text": "CONGRATS! You qualify for UGX 200,000 instant loan! Reply YES. 30% weekly interest, repay UGX 320,000 in 14 days.",
+      "parsed": {
+        "lender": "QuickCash UG",
+        "is_licensed": false,
+        "amount": 200000,
+        "currency": "UGX",
+        "fees": [
+          { "label": "Processing fee", "amount": 40000 },
+          { "label": "Interest (30% weekly)", "amount": 80000 }
+        ],
+        "total_repayable": 320000,
+        "due_date": "2026-07-25",
+        "term_days": 14,
+        "effective_rate_pct": 60.0,
+        "is_predatory": true,
+        "flags": ["HIGH_COST", "UNLICENSED", "UNSOLICITED"]
+      }
+    },
+    {
+      "id": "repayment",
+      "label": "Repayment confirmation",
+      "text": "Loan repayment of UGX 50,000 received. Remaining balance UGX 59,000.",
+      "parsed": {
+        "lender": "MoKash (MTN)",
+        "is_licensed": true,
+        "amount": 50000,
+        "currency": "UGX",
+        "fees": [],
+        "total_repayable": 59000,
+        "due_date": null,
+        "term_days": null,
+        "effective_rate_pct": 0.0,
+        "is_predatory": false,
+        "flags": ["REPAYMENT"]
+      }
+    }
+  ],
+  "stress": {
+    "1": {
+      "borrower_id": 1,
+      "band": "Stable",
+      "reason": "1 active loan of UGX 109,000 against est. monthly income UGX 600,000 — well within a manageable range."
+    },
+    "2": {
+      "borrower_id": 2,
+      "band": "Emerging Risk",
+      "reason": "2 active loans totalling UGX 277,000 against est. monthly income UGX 600,000 — repayments are approaching a third of income."
+    },
+    "3": {
+      "borrower_id": 3,
+      "band": "High Risk",
+      "reason": "3 active loans totalling UGX 597,000 against est. monthly income UGX 600,000 — obligations now rival monthly income."
+    },
+    "default": {
+      "borrower_id": 0,
+      "band": "Emerging Risk",
+      "reason": "Limited history available offline — treat new borrowing with caution."
+    }
+  }
+}

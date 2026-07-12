@@ -1,0 +1,57 @@
+[
+  {
+    "model": "core.lender",
+    "pk": 1,
+    "fields": {
+      "name": "Four Financial",
+      "license_number": "BOU-DL-0041",
+      "district": "Kampala",
+      "is_predatory": true,
+      "created_at": "2026-01-05T09:00:00Z"
+    }
+  },
+  {
+    "model": "core.lender",
+    "pk": 2,
+    "fields": {
+      "name": "Cashy",
+      "license_number": "BOU-DL-0102",
+      "district": "Wakiso",
+      "is_predatory": true,
+      "created_at": "2026-01-06T09:00:00Z"
+    }
+  },
+  {
+    "model": "core.lender",
+    "pk": 3,
+    "fields": {
+      "name": "Zenka",
+      "license_number": "BOU-DL-0087",
+      "district": "Kampala",
+      "is_predatory": false,
+      "created_at": "2026-01-07T09:00:00Z"
+    }
+  },
+  {
+    "model": "core.lender",
+    "pk": 4,
+    "fields": {
+      "name": "Mokash",
+      "license_number": "BOU-DL-0015",
+      "district": "Mbarara",
+      "is_predatory": false,
+      "created_at": "2026-01-08T09:00:00Z"
+    }
+  },
+  {
+    "model": "core.lender",
+    "pk": 5,
+    "fields": {
+      "name": "Quick Credit",
+      "license_number": "",
+      "district": "Gulu",
+      "is_predatory": true,
+      "created_at": "2026-01-09T09:00:00Z"
+    }
+  }
+]
