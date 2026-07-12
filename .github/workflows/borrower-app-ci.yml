@@ -1,0 +1,55 @@
+﻿name: Borrower App CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "borrower-app/**"
+      - ".github/workflows/borrower-app-ci.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "borrower-app/**"
+      - ".github/workflows/borrower-app-ci.yml"
+
+concurrency:
+  group: borrower-app-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: borrower-app
+
+jobs:
+  build-and-test:
+    name: Lint, Test & Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+          cache: "npm"
+          cache-dependency-path: borrower-app/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint --if-present
+
+      - name: Run tests
+        run: CI=true npm test -- --watchAll=false --passWithNoTests
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: borrower-app-build
+          path: borrower-app/build
+          retention-days: 7
