@@ -85,7 +85,7 @@ DATABASES = {
 
 
 
-GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
+GROQ_API_KEY = config("GROQ_API_KEY", default="")
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
