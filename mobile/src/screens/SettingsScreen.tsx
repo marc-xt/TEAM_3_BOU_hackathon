@@ -66,6 +66,10 @@ export default function SettingsScreen({ navigation }: any) {
           <Text style={styles.navRowText}>🤝  {t("settings.saferOptions")}</Text>
           <Text style={styles.navChevron}>›</Text>
         </Pressable>
+        <Pressable style={styles.navRow} onPress={() => navigation.navigate("Contribution")}>
+          <Text style={styles.navRowText}>🇺🇬  {t("settings.contribution")}</Text>
+          <Text style={styles.navChevron}>›</Text>
+        </Pressable>
         <Pressable style={styles.navRow} onPress={() => showDanger("Ezee Credit")}>
           <Text style={styles.navRowText}>⚠️  {t("settings.simulateDanger")}</Text>
           <Text style={styles.navChevron}>›</Text>

@@ -17,6 +17,7 @@ import UnderstandLoanScreen from "./screens/UnderstandLoanScreen";
 import SaferOptionsScreen from "./screens/SaferOptionsScreen";
 import ScoreScreen from "./screens/ScoreScreen";
 import SafeToBorrowScreen from "./screens/SafeToBorrowScreen";
+import ContributionScreen from "./screens/ContributionScreen";
 import HelperBubble from "./components/HelperBubble";
 import DangerOverlay from "./components/DangerOverlay";
 import { authenticate, shouldRelock } from "./lock/appLock";
@@ -131,6 +132,7 @@ export default function App() {
             <Stack.Screen name="SaferOptions" component={SaferOptionsScreen} options={{ title: "Safer ways to get cash" }} />
             <Stack.Screen name="Score" component={ScoreScreen} options={{ title: "Your BorrowWise score" }} />
             <Stack.Screen name="SafeToBorrow" component={SafeToBorrowScreen} options={{ title: "What you can safely borrow" }} />
+            <Stack.Screen name="Contribution" component={ContributionScreen} options={{ title: "Protecting Uganda together" }} />
           </Stack.Navigator>
         </NavigationContainer>
         <HelperBubble onPress={() => openChat()} />

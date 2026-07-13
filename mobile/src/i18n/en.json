@@ -88,7 +88,8 @@
     "checkTerms": "Check a loan's terms",
     "talkToSente": "Talk to Sente (AI helper)",
     "simulateDanger": "Simulate opening a risky app",
-    "saferOptions": "See safer ways to borrow"
+    "saferOptions": "See safer ways to borrow",
+    "contribution": "Your contribution to safer lending"
   },
   "tc": {
     "lede": "About to accept a loan app? Paste its terms & conditions and I'll flag anything dangerous in plain language.",
@@ -161,6 +162,20 @@
     "understand": "Understand more & get help",
     "understandSub": "Talk to Sente — find a safer loan",
     "continue": "continue to {{app}} anyway"
+  },
+  "contrib": {
+    "countSub": "borrowers protected others this month — you're one of them",
+    "sentTitle": "What you chose to send",
+    "sentSub": "Nothing leaves your phone unless you tap. You're in control.",
+    "flagged": "Flagged: {{app}}",
+    "reported": "Reported: SMS harassment",
+    "view": "view",
+    "reportBtn": "Report an app (demo)",
+    "shareTitle": "What we share back — anonymised",
+    "share1": "Counts only — e.g. \"12 flags on Ezee Credit, Kampala\"",
+    "share2": "Exposure by district — no names, no messages, no loans",
+    "share3": "Pooled with thousands → Bank of Uganda & UMRA",
+    "privacy": "Your identity, your SMS and your loans never leave the phone — only anonymous, aggregated numbers do."
   },
   "common": { "on": "On", "off": "Off", "back": "Back" }
 }
