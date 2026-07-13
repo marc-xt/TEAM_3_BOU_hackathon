@@ -93,6 +93,10 @@
     "contribution": "Mchango wako kwa ukopeshaji salama"
   },
   "bubble": { "hello": "Habari", "label": "Ongea nami" },
+  "safercard": {
+    "mokash": { "n": "MoKash — mwenye leseni (MTN)", "d": "Hadi UGX 250,000 · ~9% · piga *165#. Lipa kwa siku 30, si 14.", "a": "Nionyeshe jinsi" },
+    "sacco": { "n": "SACCO / kikundi chako cha akiba", "d": "Kiwango cha wanachama, na watasubiri mambo yakichelewa.", "a": "Tafuta karibu" }
+  },
   "tc": {
     "lede": "Karibu kukubali programu ya mkopo? Bandika masharti yake na nitakuonyesha lolote hatari kwa lugha rahisi.",
     "placeholder": "Bandika masharti ya programu ya mkopo hapa…",
@@ -101,7 +105,14 @@
     "analysing": "Ninasoma maandishi madogo…",
     "redFlags": "Ya kuangalia",
     "stubNote": "Ukaguzi wa onyesho. Toleo kamili husoma masharti ya programu na kuyachambua kwa AI.",
-    "verdict": { "SAFE": "✓ Yanaonekana sawa", "CAUTION": "⚠ Kuwa mwangalifu", "PREDATORY": "⛔ Ni ya unyonyaji — usikubali" }
+    "verdict": { "SAFE": "✓ Yanaonekana sawa", "CAUTION": "⚠ Kuwa mwangalifu", "PREDATORY": "⛔ Ni ya unyonyaji — usikubali" },
+    "result": {
+      "summary": "Mkopo huu unagharimu kama 30% kila wiki — zaidi ya 300% kwa mwaka. Waweza kuchukua anwani na picha zako, kukata Pesa za Simu bila kuuliza, na kushiriki taarifa zako na 'washirika'. Tafadhali usikubali.",
+      "f1": { "c": "Riba ya 30% kwa wiki kwenye salio lililobaki", "w": "Ni takriban 320,000 kurudisha kwa mkopo wa 200,000 ndani ya wiki mbili — juu ya kikomo kilichodhibitiwa." },
+      "f2": { "c": "Unatoa ruhusa ya anwani, kumbukumbu za simu na picha", "w": "Hutumika kukunyanyasa na kukuaibisha (na familia yako) ukichelewa." },
+      "f3": { "c": "Unaidhinisha makato ya moja kwa moja kutoka Pesa za Simu", "w": "Waweza kuvuta pesa wakati wowote kuna salio, hata za chakula au kodi." },
+      "f4": { "c": "Taarifa zako zaweza kushirikiwa na 'washirika' wa nje", "w": "Utambulisho na ukopaji wako huuzwa bila ridhaa halisi." }
+    }
   },
   "chat": {
     "greeting": "Habari — mimi ni Sente. Niulize chochote kuhusu mikopo au pesa zako, bila kuhukumu. Nikusaidie vipi?",
@@ -111,6 +122,7 @@
     "q1": "Nionyeshe njia salama",
     "q2": "Naweza kumudu hii?",
     "q3": "Je, mkopeshaji huyu ana leseni?",
+    "micHint": "Kuzungumza — inakuja hivi karibuni",
     "reply": {
       "greeting": "Nipo. Niambie kinachoendelea na pesa nami nitasaidia — bila kuhukumu.",
       "askAmount": "Nakusikia — msongo huo ni halisi. Unahitaji kiasi gani, na lini?",

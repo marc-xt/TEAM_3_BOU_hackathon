@@ -63,12 +63,12 @@ export default function TcReviewScreen() {
               {t(`tc.verdict.${result.verdict}`)}
             </Text>
           </View>
-          <Text style={styles.summary}>{result.summary}</Text>
+          <Text style={styles.summary}>{t(result.summaryKey)}</Text>
           <Text style={styles.flagsHead}>{t("tc.redFlags")}</Text>
           {result.red_flags.map((f, i) => (
             <View key={i} style={styles.flag}>
-              <Text style={styles.flagClause}>⚠ {f.clause}</Text>
-              <Text style={styles.flagWhy}>{f.why}</Text>
+              <Text style={styles.flagClause}>⚠ {t(f.clauseKey)}</Text>
+              <Text style={styles.flagWhy}>{t(f.whyKey)}</Text>
             </View>
           ))}
           <Text style={styles.note}>{t("tc.stubNote")}</Text>

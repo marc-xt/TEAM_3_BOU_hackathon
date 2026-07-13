@@ -12,7 +12,13 @@ export default function ChatScreen({ route }: any) {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
+  const [micHint, setMicHint] = useState(false);
   const scroller = useRef<ScrollView>(null);
+
+  function tapMic() {
+    setMicHint(true);
+    setTimeout(() => setMicHint(false), 2400);
+  }
 
   // Opening message — a rescue opener if we came from the overlay, else a greeting.
   useEffect(() => {
@@ -52,9 +58,9 @@ export default function ChatScreen({ route }: any) {
             </View>
             {m.cards?.map((c, j) => (
               <View key={j} style={styles.card}>
-                <Text style={styles.cardTitle}>✓ {c.name}</Text>
-                <Text style={styles.cardDetail}>{c.detail}</Text>
-                <Text style={styles.cardAction}>{c.action} →</Text>
+                <Text style={styles.cardTitle}>✓ {t(c.nameKey)}</Text>
+                <Text style={styles.cardDetail}>{t(c.detailKey)}</Text>
+                <Text style={styles.cardAction}>{t(c.actionKey)} →</Text>
               </View>
             ))}
           </View>
@@ -70,6 +76,7 @@ export default function ChatScreen({ route }: any) {
         ))}
       </View>
 
+      {micHint ? <Text style={styles.micHint}>🎤 {t("chat.micHint")}</Text> : null}
       <View style={styles.inputBar}>
         <TextInput
           style={styles.input}
@@ -80,6 +87,9 @@ export default function ChatScreen({ route }: any) {
           onSubmitEditing={() => submit(input)}
           returnKeyType="send"
         />
+        <Pressable style={styles.mic} onPress={tapMic} accessibilityLabel={t("chat.micHint")}>
+          <Text style={styles.micIcon}>🎤</Text>
+        </Pressable>
         <Pressable style={styles.send} onPress={() => submit(input)}>
           <Text style={styles.sendText}>➤</Text>
         </Pressable>
@@ -106,6 +116,9 @@ const styles = StyleSheet.create({
   quickText: { color: colors.maroon, fontWeight: "600", fontSize: 12 },
   inputBar: { flexDirection: "row", alignItems: "center", gap: space.s2, padding: space.s2, borderTopWidth: 1, borderTopColor: colors.border, backgroundColor: colors.surface },
   input: { flex: 1, backgroundColor: colors.cream, borderWidth: 1, borderColor: colors.border, borderRadius: 20, paddingHorizontal: 14, paddingVertical: 9, color: colors.text },
+  mic: { width: 40, height: 40, borderRadius: 20, borderWidth: 1, borderColor: colors.border, backgroundColor: colors.cream, alignItems: "center", justifyContent: "center" },
+  micIcon: { fontSize: 17 },
+  micHint: { textAlign: "center", color: colors.muted, fontSize: 11.5, fontStyle: "italic", paddingBottom: 4 },
   send: { width: 40, height: 40, borderRadius: 20, backgroundColor: colors.maroon, alignItems: "center", justifyContent: "center" },
   sendText: { color: "#fff", fontSize: 16 },
 });

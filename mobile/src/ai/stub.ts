@@ -6,9 +6,9 @@
 export type ChatRole = "user" | "assistant";
 
 export interface LenderCard {
-  name: string;
-  detail: string;
-  action: string;
+  nameKey: string;
+  detailKey: string;
+  actionKey: string;
 }
 
 export interface ChatMessage {
@@ -19,8 +19,8 @@ export interface ChatMessage {
 
 // ---- safer-lender cards reused across rescue replies ----
 const SAFER_CARDS: LenderCard[] = [
-  { name: "MoKash — licensed (MTN)", detail: "Up to UGX 250,000 · ~9% · dial *165#. Repay in 30 days, not 14.", action: "Show me how" },
-  { name: "Your SACCO / savings group", detail: "Members' rate, and they'll wait if things run late.", action: "Find nearby" },
+  { nameKey: "safercard.mokash.n", detailKey: "safercard.mokash.d", actionKey: "safercard.mokash.a" },
+  { nameKey: "safercard.sacco.n", detailKey: "safercard.sacco.d", actionKey: "safercard.sacco.a" },
 ];
 
 // A reply references an i18n key so its text follows the chosen language.
@@ -48,12 +48,12 @@ export async function sendChat(history: ChatMessage[], _lang: string): Promise<C
 
 // ---- T&C review (canned) ----
 export interface TcRedFlag {
-  clause: string;
-  why: string;
+  clauseKey: string;
+  whyKey: string;
 }
 export interface TcResult {
   verdict: "SAFE" | "CAUTION" | "PREDATORY";
-  summary: string;
+  summaryKey: string;
   red_flags: TcRedFlag[];
 }
 
@@ -61,13 +61,12 @@ export async function reviewTc(_text: string): Promise<TcResult> {
   await delay(1100);
   return {
     verdict: "PREDATORY",
-    summary:
-      "This loan costs about 30% every week — over 300% a year. It can take your phone contacts and photos, auto-debit your Mobile Money without asking, and share your details with 'partners'. Please don't accept it.",
+    summaryKey: "tc.result.summary",
     red_flags: [
-      { clause: "Interest of 30% per week on the outstanding balance", why: "That's roughly 320,000 back on a 200,000 loan in two weeks — far above the regulated cap." },
-      { clause: "You grant access to your contacts, call logs and photos", why: "Used to harass and shame you (and your family) if you're late." },
-      { clause: "You authorise automatic deductions from your Mobile Money", why: "They can pull money whenever there's a balance, even for food or rent." },
-      { clause: "Your data may be shared with third-party 'partners'", why: "Your identity and borrowing get sold on without real consent." },
+      { clauseKey: "tc.result.f1.c", whyKey: "tc.result.f1.w" },
+      { clauseKey: "tc.result.f2.c", whyKey: "tc.result.f2.w" },
+      { clauseKey: "tc.result.f3.c", whyKey: "tc.result.f3.w" },
+      { clauseKey: "tc.result.f4.c", whyKey: "tc.result.f4.w" },
     ],
   };
 }

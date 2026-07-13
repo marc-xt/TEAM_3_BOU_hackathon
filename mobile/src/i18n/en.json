@@ -100,7 +100,14 @@
     "analysing": "Reading the fine print…",
     "redFlags": "What to watch out for",
     "stubNote": "Demo review. The full version reads the app's own terms and analyses them with AI.",
-    "verdict": { "SAFE": "✓ Looks fair", "CAUTION": "⚠ Be careful", "PREDATORY": "⛔ Predatory — don't accept" }
+    "verdict": { "SAFE": "✓ Looks fair", "CAUTION": "⚠ Be careful", "PREDATORY": "⛔ Predatory — don't accept" },
+    "result": {
+      "summary": "This loan costs about 30% every week — over 300% a year. It can take your phone contacts and photos, auto-debit your Mobile Money without asking, and share your details with 'partners'. Please don't accept it.",
+      "f1": { "c": "Interest of 30% per week on the outstanding balance", "w": "That's roughly 320,000 back on a 200,000 loan in two weeks — far above the regulated cap." },
+      "f2": { "c": "You grant access to your contacts, call logs and photos", "w": "Used to harass and shame you (and your family) if you're late." },
+      "f3": { "c": "You authorise automatic deductions from your Mobile Money", "w": "They can pull money whenever there's a balance, even for food or rent." },
+      "f4": { "c": "Your data may be shared with third-party 'partners'", "w": "Your identity and borrowing get sold on without real consent." }
+    }
   },
   "chat": {
     "greeting": "Hi — I'm Sente. Ask me anything about your loans or money, no judgment. How can I help?",
@@ -110,6 +117,7 @@
     "q1": "Show me safer options",
     "q2": "Can I afford this?",
     "q3": "Is this lender licensed?",
+    "micHint": "Voice input — coming soon",
     "reply": {
       "greeting": "I'm here. Tell me what's going on with money and I'll help — no judgment.",
       "askAmount": "I hear you — that pressure is real. How much do you need, and by when?",
@@ -119,6 +127,10 @@
     }
   },
   "bubble": { "hello": "Hi there", "label": "Talk to me" },
+  "safercard": {
+    "mokash": { "n": "MoKash — licensed (MTN)", "d": "Up to UGX 250,000 · ~9% · dial *165#. Repay in 30 days, not 14.", "a": "Show me how" },
+    "sacco": { "n": "Your SACCO / savings group", "d": "Members' rate, and they'll wait if things run late.", "a": "Find nearby" }
+  },
   "safer": {
     "header": "Need money fast? We get it.",
     "sub": "The pressure is real — but a high-cost 2-week loan can dig a deeper hole. Safer ways first:",

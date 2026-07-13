@@ -47,6 +47,7 @@ export default function App() {
   const [ready, setReady] = useState(false);
   const [onboarded, setOnboarded] = useState(false);
   const [locked, setLocked] = useState(true);
+  const [route, setRoute] = useState<string | undefined>(undefined);
   const lastBg = useRef<number | null>(null);
 
   useEffect(() => {
@@ -110,7 +111,12 @@ export default function App() {
     <AppProvider>
       <StatusBar style="light" />
       <View style={{ flex: 1 }}>
-        <NavigationContainer ref={navigationRef} theme={navTheme as any}>
+        <NavigationContainer
+          ref={navigationRef}
+          theme={navTheme as any}
+          onReady={() => setRoute(navigationRef.getCurrentRoute()?.name)}
+          onStateChange={() => setRoute(navigationRef.getCurrentRoute()?.name)}
+        >
           <Stack.Navigator>
             <Stack.Screen
               name="Home"
@@ -135,7 +141,7 @@ export default function App() {
             <Stack.Screen name="Contribution" component={ContributionScreen} options={{ title: "Protecting Uganda together" }} />
           </Stack.Navigator>
         </NavigationContainer>
-        <HelperBubble onPress={() => openChat()} />
+        {route !== "Chat" && <HelperBubble onPress={() => openChat()} />}
         <DangerOverlay onUnderstand={(app) => openChat({ seedApp: app })} />
       </View>
     </AppProvider>
