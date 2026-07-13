@@ -2,6 +2,7 @@ import React from "react";
 import { ScrollView, View, Text, StyleSheet, Pressable } from "react-native";
 import { useTranslation } from "react-i18next";
 import DisclosureCard from "../components/DisclosureCard";
+import LoanProgress from "../components/LoanProgress";
 import type { StoredLoan, Payment } from "../domain/types";
 import { colors, space, fmtUGX, fmtDate } from "../theme";
 
@@ -27,12 +28,7 @@ export default function LoanDetailScreen({ route, navigation }: any) {
         <Text style={styles.understandText}>{t("loan.understandBtn")} →</Text>
       </Pressable>
 
-      {!loan.is_repaid && loan.kind === "DISBURSEMENT" && (
-        <View style={styles.owedCard}>
-          <Text style={styles.owedLabel}>{t("loan.outstanding")}</Text>
-          <Text style={styles.owedValue}>{fmtUGX(loan.outstanding)}</Text>
-        </View>
-      )}
+      {loan.kind === "DISBURSEMENT" && <LoanProgress loan={loan} />}
 
       {loan.kind === "DISBURSEMENT" && history.length > 0 && (
         <View style={styles.rep}>

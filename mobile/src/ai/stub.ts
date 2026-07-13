@@ -23,43 +23,27 @@ const SAFER_CARDS: LenderCard[] = [
   { name: "Your SACCO / savings group", detail: "Members' rate, and they'll wait if things run late.", action: "Find nearby" },
 ];
 
-type Intent = "desperate" | "afford" | "licensed" | "greeting";
-
-function classify(text: string): Intent {
-  const t = text.toLowerCase();
-  if (/(rent|urgent|today|desperat|need|school fees|sick|emergency|leero|nneetaaga)/.test(t)) return "desperate";
-  if (/(afford|how much|manage|repay|nsobola|can i)/.test(t)) return "afford";
-  if (/(safe|licens|legit|trust|scam|kabi)/.test(t)) return "licensed";
-  return "greeting";
+// A reply references an i18n key so its text follows the chosen language.
+export interface ChatReply {
+  key: string;
+  params?: Record<string, string | number>;
+  cards?: LenderCard[];
 }
 
-// Canned, empathetic replies. English is authoritative; a couple of Luganda
-// lines carry the rescue flow for the demo. The real model answers in any language.
-const REPLIES: Record<Intent, { en: string; lg?: string }> = {
-  greeting: {
-    en: "Hi — I'm Sente. Ask me anything about your loans or money, no judgment. How can I help?",
-    lg: "Oli otya! Nze Sente. Mbuuza ku bwewozi bwo oba ku ssente — tewali kunenya. Nkuyambe ntya?",
-  },
-  desperate: {
-    en: "I hear you — that pressure is real, and needing money fast doesn't make you bad with money. Before a high-cost app that could charge you far more, here are safer ways:",
-    lg: "Mpulira — puleesa eno nnyinza. Okwetaaga ssente mangu tekikufuula mubi. Nga tonnaba kukozesa app ey'obwewozi obw'ebbeeyi, laba engeri ennungi:",
-  },
-  afford: {
-    en: "Let's keep it safe: aim to keep loan repayments under about a third of the money that lands on your phone each month. On your history that's roughly UGX 250,000 over 30 days at a fair rate. Want me to show what fits?",
-  },
-  licensed: {
-    en: "Good question. Licensed lenders are on UMRA/Bank of Uganda's register, with capped rates and no harassment. Unlicensed apps often charge 60%+ and take your contacts. Tell me the app and I'll check it.",
-  },
-};
-
-// Scripted chat. Returns the assistant reply (+ safer-lender cards for rescue).
-export async function sendChat(history: ChatMessage[], lang: string): Promise<ChatMessage> {
+// Guided flow: a stated need -> ask how much & by when -> recommend safe
+// providers. Keeps afford/licensed as direct answers. Language-agnostic — the
+// screen renders the key with the current language.
+export async function sendChat(history: ChatMessage[], _lang: string): Promise<ChatReply> {
   await delay(650);
-  const lastUser = [...history].reverse().find((m) => m.role === "user");
-  const intent = classify(lastUser?.content ?? "");
-  const r = REPLIES[intent];
-  const content = lang === "lg" && r.lg ? r.lg : r.en;
-  return { role: "assistant", content, cards: intent === "desperate" ? SAFER_CARDS : undefined };
+  const last = ([...history].reverse().find((m) => m.role === "user")?.content ?? "").toLowerCase();
+  const hasAmount = /\d[\d,. ]{2,}/.test(last) || /\d+\s*k\b/.test(last);
+
+  if (hasAmount) return { key: "chat.reply.recommend", cards: SAFER_CARDS };
+  if (/(rent|urgent|today|desperat|need|school|fees|sick|emergency|help|leero|nneetaaga)/.test(last))
+    return { key: "chat.reply.askAmount" };
+  if (/(afford|how much|manage|repay|nsobola|can i)/.test(last)) return { key: "chat.reply.afford" };
+  if (/(safe|licens|legit|trust|scam|kabi)/.test(last)) return { key: "chat.reply.licensed" };
+  return { key: "chat.reply.greeting" };
 }
 
 // ---- T&C review (canned) ----

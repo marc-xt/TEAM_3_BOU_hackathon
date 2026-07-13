@@ -30,8 +30,8 @@ export default function ChatScreen({ route }: any) {
     setMessages(next);
     setBusy(true);
     try {
-      const reply = await sendChat(next, i18n.language);
-      setMessages((m) => [...m, reply]);
+      const r = await sendChat(next, i18n.language);
+      setMessages((m) => [...m, { role: "assistant", content: t(r.key, r.params), cards: r.cards }]);
     } finally {
       setBusy(false);
     }

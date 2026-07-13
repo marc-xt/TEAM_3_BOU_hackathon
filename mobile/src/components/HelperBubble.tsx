@@ -1,13 +1,30 @@
 // Floating "talk to me" bubble present on every screen. Opens the AI helper.
 // Mounted once in App.tsx over the navigator; navigation is done via a ref.
 
-import React from "react";
-import { View, Text, Pressable, StyleSheet } from "react-native";
+import React, { useEffect, useRef } from "react";
+import { View, Text, Pressable, StyleSheet, Animated, Easing } from "react-native";
 import { useTranslation } from "react-i18next";
 import { colors } from "../theme";
 
 export default function HelperBubble({ onPress }: { onPress: () => void }) {
   const { t } = useTranslation();
+  const pulse = useRef(new Animated.Value(0)).current;
+
+  // Gentle attention pulse so people notice they can talk to Sente.
+  useEffect(() => {
+    const loop = Animated.loop(
+      Animated.sequence([
+        Animated.timing(pulse, { toValue: 1, duration: 900, easing: Easing.out(Easing.ease), useNativeDriver: true }),
+        Animated.timing(pulse, { toValue: 0, duration: 900, easing: Easing.in(Easing.ease), useNativeDriver: true }),
+        Animated.delay(1400),
+      ])
+    );
+    loop.start();
+    return () => loop.stop();
+  }, [pulse]);
+
+  const scale = pulse.interpolate({ inputRange: [0, 1], outputRange: [1, 1.12] });
+
   return (
     <View style={styles.wrap} pointerEvents="box-none">
       <Pressable style={styles.row} onPress={onPress} accessibilityRole="button" accessibilityLabel={t("bubble.label")}>
@@ -15,9 +32,9 @@ export default function HelperBubble({ onPress }: { onPress: () => void }) {
           <Text style={styles.tipTitle}>{t("bubble.hello")} 👋</Text>
           <Text style={styles.tipSub}>{t("bubble.label")}</Text>
         </View>
-        <View style={styles.fab}>
+        <Animated.View style={[styles.fab, { transform: [{ scale }] }]}>
           <Text style={styles.fabIcon}>💬</Text>
-        </View>
+        </Animated.View>
       </Pressable>
     </View>
   );

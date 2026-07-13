@@ -109,7 +109,14 @@
     "placeholder": "Ask anything about your loans…",
     "q1": "Show me safer options",
     "q2": "Can I afford this?",
-    "q3": "Is this lender licensed?"
+    "q3": "Is this lender licensed?",
+    "reply": {
+      "greeting": "I'm here. Tell me what's going on with money and I'll help — no judgment.",
+      "askAmount": "I hear you — that pressure is real. How much do you need, and by when?",
+      "recommend": "Thank you. Based on the money landing on your phone, you can safely handle a small, short loan. Here are safer places than an unlicensed app:",
+      "afford": "Keep repayments under about a third of your monthly income — on your history that's roughly UGX 220,000 over 30 days at a fair rate. Want me to show what fits?",
+      "licensed": "Licensed lenders are on UMRA / Bank of Uganda's register — capped rates, no harassment. Unlicensed apps often charge 60%+ and take your contacts. Tell me the app and I'll check it."
+    }
   },
   "bubble": { "hello": "Hi there", "label": "Talk to me" },
   "safer": {
@@ -129,6 +136,14 @@
     "early": "Repay early and you keep more — there's no reward for waiting.",
     "cost": "Cost of this loan",
     "coach": "You're not bad with money — knowing the true cost is what keeps you in control. 👏"
+  },
+  "progress": {
+    "title": "Repayment progress",
+    "paid": "Paid",
+    "left": "Left",
+    "daysLeft": "{{n}} days left",
+    "overdue": "Overdue",
+    "done": "Fully repaid 🎉"
   },
   "score": {
     "outOf": "out of 100",

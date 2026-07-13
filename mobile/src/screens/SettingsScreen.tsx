@@ -100,16 +100,6 @@ export default function SettingsScreen({ navigation }: any) {
         <ToggleRow label={t("settings.risingAlerts")} value={rising} onChange={async (v) => { setRising(v); await AsyncStorage.setItem(PREF_RISING, String(v)); }} />
       </Section>
 
-      <Section title={t("settings.backend")}>
-        <Text style={styles.fieldLabel}>{t("settings.apiBase")}</Text>
-        <TextInput style={styles.input} value={apiBase} onChangeText={setBase} autoCapitalize="none" placeholder="http://192.168.x.x:8000/api" />
-        <Text style={styles.fieldLabel}>{t("settings.borrowerId")}</Text>
-        <TextInput style={styles.input} value={borrowerId} onChangeText={setBid} keyboardType="number-pad" />
-        <Pressable style={styles.saveBtn} onPress={async () => { await setApiBase(apiBase); await setBorrowerId(parseInt(borrowerId, 10) || 1); await refresh(); }}>
-          <Text style={styles.saveText}>{t("settings.save")}</Text>
-        </Pressable>
-      </Section>
-
       <Section title={t("settings.permissions")}>
         <Text style={[styles.status, sms ? styles.ok : styles.bad]}>
           {sms ? t("settings.smsGranted") : t("settings.smsDenied")}
