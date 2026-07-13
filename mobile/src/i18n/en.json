@@ -79,7 +79,20 @@
     "smsGranted": "SMS access granted",
     "smsDenied": "SMS access not granted",
     "grantSms": "Grant SMS access",
-    "save": "Save"
+    "save": "Save",
+    "tools": "Tools",
+    "checkTerms": "Check a loan's terms",
+    "talkToSente": "Talk to Sente (AI helper)"
+  },
+  "tc": {
+    "lede": "About to accept a loan app? Paste its terms & conditions and I'll flag anything dangerous in plain language.",
+    "placeholder": "Paste the loan app's terms here…",
+    "loadSample": "Load sample T&C",
+    "analyse": "Check it",
+    "analysing": "Reading the fine print…",
+    "redFlags": "What to watch out for",
+    "stubNote": "Demo review. The full version reads the app's own terms and analyses them with AI.",
+    "verdict": { "SAFE": "✓ Looks fair", "CAUTION": "⚠ Be careful", "PREDATORY": "⛔ Predatory — don't accept" }
   },
   "chat": {
     "greeting": "Hi — I'm Sente. Ask me anything about your loans or money, no judgment. How can I help?",

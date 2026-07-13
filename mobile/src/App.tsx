@@ -12,6 +12,7 @@ import LoanDetailScreen from "./screens/LoanDetailScreen";
 import SettingsScreen from "./screens/SettingsScreen";
 import OnboardingScreen from "./screens/OnboardingScreen";
 import ChatScreen from "./screens/ChatScreen";
+import TcReviewScreen from "./screens/TcReviewScreen";
 import HelperBubble from "./components/HelperBubble";
 import { authenticate, shouldRelock } from "./lock/appLock";
 import { colors } from "./theme";
@@ -120,6 +121,7 @@ export default function App() {
             <Stack.Screen name="LoanDetail" component={LoanDetailScreen} options={{ title: "Loan" }} />
             <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: "Settings" }} />
             <Stack.Screen name="Chat" component={ChatScreen} options={{ title: "Sente · helper" }} />
+            <Stack.Screen name="TcReview" component={TcReviewScreen} options={{ title: "Check terms" }} />
           </Stack.Navigator>
         </NavigationContainer>
         <HelperBubble onPress={() => openChat()} />

@@ -12,7 +12,7 @@ import { colors, space, radius } from "../theme";
 const PREF_DUE = "cs.pref.dueReminders";
 const PREF_RISING = "cs.pref.risingAlerts";
 
-export default function SettingsScreen() {
+export default function SettingsScreen({ navigation }: any) {
   const { t, i18n } = useTranslation();
   const { refresh, injectSamples, exitSamples, sampleMode } = useApp();
   const [lang, setLang] = useState(i18n.language);
@@ -51,6 +51,17 @@ export default function SettingsScreen() {
             </Pressable>
           ))}
         </View>
+      </Section>
+
+      <Section title={t("settings.tools")}>
+        <Pressable style={styles.navRow} onPress={() => navigation.navigate("TcReview")}>
+          <Text style={styles.navRowText}>📄  {t("settings.checkTerms")}</Text>
+          <Text style={styles.navChevron}>›</Text>
+        </Pressable>
+        <Pressable style={styles.navRow} onPress={() => navigation.navigate("Chat")}>
+          <Text style={styles.navRowText}>💬  {t("settings.talkToSente")}</Text>
+          <Text style={styles.navChevron}>›</Text>
+        </Pressable>
       </Section>
 
       <Section title={t("settings.appLock")}>
@@ -145,6 +156,9 @@ const styles = StyleSheet.create({
   saveText: { color: "#fff", fontWeight: "700" },
   demoBtn: { borderWidth: 1, borderColor: colors.gold, borderRadius: 8, padding: space.s3, alignItems: "center", marginTop: space.s2 },
   demoText: { color: colors.maroonDark, fontWeight: "700" },
+  navRow: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", paddingVertical: space.s2 },
+  navRowText: { color: colors.text, fontSize: 14.5, fontWeight: "600" },
+  navChevron: { color: colors.muted, fontSize: 20 },
   status: { fontSize: 14, fontWeight: "600" },
   ok: { color: colors.stable },
   bad: { color: colors.high },
