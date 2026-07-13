@@ -9,12 +9,14 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import en from "./en.json";
 import lg from "./lg.json";
 import rn from "./rn.json";
+import sw from "./sw.json";
 
 const LANG_KEY = "cs.lang";
 export const SUPPORTED = [
   { code: "en", label: "English" },
   { code: "lg", label: "Luganda" },
   { code: "rn", label: "Runyankole" },
+  { code: "sw", label: "Kiswahili" },
 ] as const;
 
 function deviceLang(): string {
@@ -25,7 +27,7 @@ function deviceLang(): string {
 export async function initI18n(): Promise<void> {
   const saved = await AsyncStorage.getItem(LANG_KEY);
   await i18n.use(initReactI18next).init({
-    resources: { en: { translation: en }, lg: { translation: lg }, rn: { translation: rn } },
+    resources: { en: { translation: en }, lg: { translation: lg }, rn: { translation: rn }, sw: { translation: sw } },
     lng: saved || deviceLang(),
     fallbackLng: "en",
     interpolation: { escapeValue: false },

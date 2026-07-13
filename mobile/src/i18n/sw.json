@@ -1,0 +1,97 @@
+{
+  "app": { "title": "BorrowWise", "subtitle": "Elewa mkopo kabla ya kuukubali." },
+  "onboarding": {
+    "consentTitle": "Soma mikopo yako, kwenye simu yako",
+    "consentBody": "BorrowWise inasoma jumbe za mikopo ya MoKash na Wewole kwenye simu hii kukuonyesha gharama halisi ya kila mkopo, na kukuonya kabla hujadaiwa kupita kiasi. Hakuna kinachotumwa popote bila ruhusa yako.",
+    "grantSms": "Ruhusu kusoma SMS za mikopo",
+    "language": "Lugha",
+    "continue": "Endelea"
+  },
+  "home": {
+    "health": "Afya yako ya ukopaji",
+    "activeLoans": "Mikopo inayoendelea",
+    "noLoans": "Hakuna mikopo iliyopatikana bado",
+    "noLoansAction": "Onyesha upya kuchanganua jumbe zako",
+    "rising": "Ukopaji wako unaongezeka",
+    "refresh": "Onyesha upya",
+    "yourScore": "Alama yako",
+    "safeToBorrow": "Salama kukopa",
+    "upTo": "hadi · ~siku 30"
+  },
+  "loan": {
+    "youReceive": "Unapokea",
+    "youRepay": "Unalipa",
+    "dueDate": "Tarehe ya kulipa",
+    "term": "Muda",
+    "cost": "Gharama ya mkopo huu",
+    "costValue": "{{pct}}% ya unachokopa",
+    "days": "Siku {{n}}",
+    "daysLeft": "Siku {{n}} zimebaki",
+    "dueToday": "Inalipwa leo",
+    "overdue": "Imepitwa na wakati",
+    "outstanding": "Bado unadaiwa",
+    "licensed": "Mkopeshaji mwenye leseni",
+    "unlicensed": "Hana leseni",
+    "highCost": "Mkopo wa gharama kubwa",
+    "offer": "Ofa ya mkopo",
+    "wouldRepay": "ungelipa",
+    "annualized": "Kiwango cha mwaka",
+    "daily": "Kiwango cha kila siku",
+    "dailyValue": "{{pct}}% kwa siku",
+    "understandBtn": "Elewa mkopo huu",
+    "repayments": "Malipo",
+    "repaymentsHint": "Ulichokwisha lipa, na salio baada ya kila malipo.",
+    "date": "Tarehe",
+    "paid": "Kilicholipwa",
+    "balance": "Salio",
+    "disbursed": "kilichotolewa",
+    "thinkTwice": "Fikiria mara mbili",
+    "thinkTwiceBody": "Ofa hii ni ya gharama kubwa na inatoka kwa mkopeshaji asiye kwenye orodha ya leseni ya UMRA."
+  },
+  "flags": {
+    "HIGH_COST": "Gharama kubwa",
+    "UNLICENSED": "Hana leseni",
+    "UNSOLICITED": "Haikuombwa",
+    "REPAYMENT": "Malipo"
+  },
+  "health": {
+    "Stable": {
+      "headline": "Uko kwenye msingi imara",
+      "nudge": "Malipo yako yanaonekana yanawezekana. Kopa tu kile unachoweza kulipa kwa urahisi."
+    },
+    "Emerging Risk": {
+      "headline": "Dalili za hatari inayojitokeza",
+      "nudge": "Madeni yako yanaongezeka. Fikiria kusitisha mikopo mipya hadi ya sasa imalizike."
+    },
+    "High Risk": {
+      "headline": "Hatari kubwa ya kudaiwa kupita kiasi",
+      "nudge": "Kuchukua mkopo huu kunaweza kukuzidishia mzigo. Ongea na mkopeshaji wako kuhusu kupanga upya kabla ya kukopa zaidi."
+    }
+  },
+  "settings": {
+    "title": "Mipangilio",
+    "language": "Lugha",
+    "appLock": "Kufuli la programu",
+    "appLockDesc": "Hitaji alama ya kidole au PIN kufungua programu",
+    "notifications": "Arifa",
+    "dueReminders": "Vikumbusho vya tarehe za kulipa",
+    "risingAlerts": "Arifa za salio linaloongezeka",
+    "backend": "Seva ya BorrowWise",
+    "apiBase": "Anwani ya seva",
+    "borrowerId": "Namba ya mkopaji",
+    "permissions": "Ruhusa",
+    "smsGranted": "Ruhusa ya SMS imetolewa",
+    "smsDenied": "Ruhusa ya SMS haijatolewa",
+    "grantSms": "Toa ruhusa ya SMS",
+    "save": "Hifadhi",
+    "tools": "Zana",
+    "checkTerms": "Kagua masharti ya mkopo",
+    "talkToSente": "Ongea na Sente (msaidizi wa AI)",
+    "simulateScan": "Igiza uchanganuzi wa programu hatari",
+    "simulateDanger": "Igiza kufungua programu hatari",
+    "saferOptions": "Ona njia salama za kukopa",
+    "contribution": "Mchango wako kwa ukopeshaji salama"
+  },
+  "bubble": { "hello": "Habari", "label": "Ongea nami" },
+  "common": { "on": "Washa", "off": "Zima", "back": "Rudi" }
+}
