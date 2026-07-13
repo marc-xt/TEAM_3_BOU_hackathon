@@ -191,6 +191,7 @@
     "incomeLabel": "PESA ZINAZOINGIA KWENYE SIMU YAKO",
     "month": "mwezi",
     "incomeSub": "zinazoingia na kubaki, wastani wa miezi 3",
+    "recBadge": "Pendekezo la kuwajibika",
     "canBorrow": "Unaweza kukopa kwa usalama hadi",
     "at": "kwa siku ~30, kwa kiwango cha haki chini ya {{pct}}%",
     "comfortable": "Salama",

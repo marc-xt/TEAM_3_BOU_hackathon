@@ -22,6 +22,7 @@ export default function SafeToBorrowScreen() {
       </View>
 
       <View style={styles.card}>
+        <Text style={styles.recBadge}>✓ {t("safe.recBadge")}</Text>
         <Text style={styles.recLabel}>{t("safe.canBorrow")}</Text>
         <Text style={styles.recAmount}>{fmtUGX(a.safeAmount)}</Text>
         <Text style={styles.recSub}>{t("safe.at", { pct: a.fairRatePct })}</Text>
@@ -54,6 +55,7 @@ const styles = StyleSheet.create({
   incomeValue: { color: "#fff", fontSize: 22, fontWeight: "800", marginTop: 2 },
   incomeSub: { color: "#f0dfae", fontSize: 11, marginTop: 2 },
   card: { backgroundColor: colors.surface, borderWidth: 1, borderColor: colors.border, borderRadius: radius, padding: space.s3, alignItems: "center" },
+  recBadge: { color: colors.stable, backgroundColor: colors.stableBg, fontSize: 11, fontWeight: "800", paddingHorizontal: 10, paddingVertical: 3, borderRadius: 12, overflow: "hidden", marginBottom: 8 },
   recLabel: { color: colors.text, fontSize: 14, fontWeight: "600" },
   recAmount: { color: colors.stable, fontSize: 30, fontWeight: "900", marginTop: 2 },
   recSub: { color: colors.muted, fontSize: 12.5, marginTop: 2 },
