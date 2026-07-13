@@ -13,7 +13,10 @@
     "noLoans": "Tihariho ecyahi ekizooriirwe",
     "noLoansAction": "Garukamu osherûre omu bubaka bwawe",
     "rising": "Ebyahi byawe nibyeyongyera",
-    "refresh": "Garukamu osherûre"
+    "refresh": "Garukamu osherûre",
+    "yourScore": "Ebbara yaawe",
+    "safeToBorrow": "Eki orikubaasa kwahiza omu bugume",
+    "upTo": "kuhika aha · ~ennaku 30"
   },
   "loan": {
     "youReceive": "Eki oteekwa",
@@ -30,7 +33,20 @@
     "licensed": "Omuhaisi aine layisinsi",
     "unlicensed": "Tiine layisinsi",
     "highCost": "Ecyahi cy'omuhendo gwa haiguru",
-    "annualized": "Omuhendo gwa buri mwaka"
+    "offer": "Ekiwabyo cy'ecyahi",
+    "wouldRepay": "wakubaire noshashura",
+    "annualized": "Omuhendo gwa buri mwaka",
+    "daily": "Omuhendo gwa buri izooba",
+    "dailyValue": "{{pct}}% buri izooba",
+    "understandBtn": "Yetegyereze ecyahi eki",
+    "repayments": "Ebishashurwa",
+    "repaymentsHint": "Ebi washashwiire, n'ebisigaireho enyima ya buri kushashura.",
+    "date": "Eizooba",
+    "paid": "Eki kishashwiire",
+    "balance": "Eki kisigaireho",
+    "disbursed": "kyahairwe",
+    "thinkTwice": "Teekateeka emirundi ebiri",
+    "thinkTwiceBody": "Ekiwabyo eki n'ecy'omuhendo gwa haiguru kandi nikiruga aha muhaisi otari aha rukalara rwa layisinsi rwa UMRA."
   },
   "flags": {
     "HIGH_COST": "Omuhendo gwa haiguru",
@@ -67,7 +83,133 @@
     "smsGranted": "Obushobozi bwa SMS bwahairwe",
     "smsDenied": "Obushobozi bwa SMS tibukahairwe",
     "grantSms": "Ha obushobozi bwa SMS",
-    "save": "Bika"
+    "save": "Bika",
+    "tools": "Ebikozeso",
+    "checkTerms": "Cheeka ebiragiro by'ecyahi",
+    "talkToSente": "Gamba na Sente (omuhwezi wa AI)",
+    "simulateScan": "Gyezaho kusherûra app embi",
+    "simulateDanger": "Gyezaho kwigura app embi",
+    "saferOptions": "Reeba emiringo mirungi y'okuhaina",
+    "contribution": "Omugasho gwawe aha kuhaisa okw'obugume"
+  },
+  "bubble": { "hello": "Mbuuza", "label": "Gamba nanye" },
+  "safer": {
+    "header": "Noyenda esente juba? Nitukyetegyereza.",
+    "sub": "Oburemeezi n'obw'amazima — kwonka ecyahi cy'omuhendo gwa haiguru ecya sabbiiti ibiri nikibaasa kukwongyera. Emiringo mirungi okubanza:",
+    "licensed": { "t": "Omuhaisi aine layisinsi", "d": "Nafugwa UMRA/BoU aha mihendo eine ekikomo.", "s": "MoKash 9%/nnaku 30 nikira 60%/nnaku 14" },
+    "sacco": { "t": "SACCO nari ekibiina kyawe ky'okubiika", "d": "Emihendo y'abanyamwe, tihariho kusherereza." },
+    "less": { "t": "Haina bikye, aha bwire bukye", "d": "UGX 100k aha nnaku 7 n'ehendo nkye kukira 200k aha nnaku 30." },
+    "wait": { "t": "Rinda ennaku nkye ku orikubaasa", "d": "N'ennaku 3 nizibaasa kureeta omushaara nari omuringo gw'ehendo nkye." }
+  },
+  "safercard": {
+    "mokash": { "n": "MoKash — aine layisinsi (MTN)", "d": "Kuhika aha UGX 250,000 · ~9% · teera *165#. Shashura omu nnaku 30, ti 14.", "a": "Nyoreka omuringo" },
+    "sacco": { "n": "SACCO nari ekibiina kyawe ky'okubiika", "d": "Omuhendo gw'abanyamwe, kandi nibakutegyereza haaba habaireho enyima.", "a": "Sherûra hakiri" }
+  },
+  "tc": {
+    "lede": "Nooza kwikiriza app y'ecyahi? Ta hano ebiragiro byayo nanye ninkworeka buri kabi omu rurimi orworobi.",
+    "placeholder": "Ta hano ebiragiro bya app y'ecyahi…",
+    "loadSample": "Taho ebiragiro eby'okworekaho",
+    "analyse": "Cheeka",
+    "analysing": "Ninshoma ebiragiro ebikye…",
+    "redFlags": "Ebi oine kwetantara",
+    "stubNote": "Okucheeka kw'okworekaho. Ekituufu nikishoma ebiragiro bya app kandi kikabicondooza na AI.",
+    "verdict": { "SAFE": "✓ Nibireeba gye", "CAUTION": "⚠ Yetantare", "PREDATORY": "⛔ Ky'obunyazi — otakikiriza" },
+    "result": {
+      "summary": "Ecyahi eki nikigura nka 30% buri sabbiiti — kuhingura 300% omu mwaka. Nikibaasa kutwara abo bo aha simu n'ebishushani, kwiha esente aha MoMo hatariho kubuuza, n'okugabana ebikukwataho n'‘abakora nabo’. Otakikiriza.",
+      "f1": { "c": "Amagoba 30% buri sabbiiti aha kisigaireho", "w": "N'obundi 320,000 kugarurayo aha cyahi cya 200,000 omu sabbiiti ibiri — haiguru munonga aha kikomo ekitegyekiirwe." },
+      "f2": { "c": "Nooha obushobozi aha bo bo, ebyayogyerwaho n'ebishushani", "w": "Nibikozesibwa kukusherereza n'okukuswaza (n'ab'omu maka gaawe) waaba washwija." },
+      "f3": { "c": "Nooikiriza kwihibwaho esente omu muringo gw'okwekorera aha MoMo", "w": "Nibabaasa kwihaho esente obwire bwona haabaho ekisigaireho, n'ez'ebyokurya nari obupangisa." },
+      "f4": { "c": "Ebikukwataho nibibaasa kugabanwa n'abantu abandi ‘abakora nabo’", "w": "Obwakyo bwawe n'okuhaina bikaguzibwa hatariho kwikiriza kw'amazima." }
+    }
+  },
+  "progress": {
+    "title": "Enkurakurana y'okushashura",
+    "paid": "Ekishashwiire",
+    "left": "Ekisigaireho",
+    "daysLeft": "Ennaku {{n}} ezisigaireho",
+    "overdue": "Obwire bwahwaho",
+    "done": "Kishashwiire kyona 🎉"
+  },
+  "score": {
+    "outOf": "aha 100",
+    "band": { "healthy": "Omuhaisi ari gye", "fair": "Wa hagati — hariho ei orikubaasa kuhindura", "risk": "Omu kabi" },
+    "builtTitle": "Kyombekirwe kuruga aha simu yaawe — omu kyama",
+    "f": {
+      "income": "Empiiho erikwija buri mwezi",
+      "debt": "Ebbanja rikye kugyeraganisa n'empiiho",
+      "repaid": "Ebyahi bishashwiire omu bwire",
+      "spending": "Okukozesa nikweyongyera aha muheru gw'omwezi"
+    },
+    "privacy": "Ebbara egi n'eyaawe. Neombekirwe aha simu yaawe kuruga aha byafaayo byawe eby'esente za MoMo — abahaisi tibagireeba kihango ku orikwikiriza kugabana."
+  },
+  "safe": {
+    "incomeLabel": "ESENTE EZIRIKWIJA AHA SIMU YAAWE",
+    "month": "omwezi",
+    "incomeSub": "ezirikutaaha zikaguma, nitugyeraganisa emyezi 3",
+    "recBadge": "Okuhabura okw'obujunaanizibwa",
+    "canBorrow": "Norikubaasa kuhaina omu bugume kuhika aha",
+    "at": "omu nnaku ~30, aha muhendo gw'amazima ahansi ya {{pct}}%",
+    "comfortable": "Omu bugume",
+    "tight": "Kifundiise",
+    "risky": "Kya kabi",
+    "lay": "Omu rurimi orworobi: eki nikiguma ebishashurwa ahansi y'ekicweka kya kashatu ky'empiiho yaawe — kandi noorikubaasa kushashura ebyokurya, obupangisa n'airtime. Waahaina ekirikukira weeteeka omu kabi."
+  },
+  "chat": {
+    "greeting": "Oraire ota — nyowe ndi Sente. Mbuuza kyona aha byahi nari esente zaawe, hatariho kucwera musango. Nkuhwere nta?",
+    "rescueOpener": "Nakuyemeza otakaba noza omu {{app}}. Noyenda esente aha ki? Hatariho kucwera musango — reka tusherûre omuringo murungi. 🤝",
+    "typing": "Sente naahandiika…",
+    "placeholder": "Buuza kyona aha byahi byawe…",
+    "q1": "Nyoreka emiringo mirungi",
+    "q2": "Ndikubaasa kukishashura?",
+    "q3": "Omuhaisi ogu aine layisinsi?",
+    "micHint": "Okugamba — nikwija juba",
+    "reply": {
+      "greeting": "Ndi hanu. Ngambira ekirikubaho aha sente nanye ndikuhwera — hatariho kucwera musango.",
+      "askAmount": "Ninkuhurira — oburemeezi obu n'obw'amazima. Noyenda esente zingahi, kandi ryari?",
+      "recommend": "Webare. Kurugiirira aha sente ezirikwija aha simu yaawe, norikubaasa kutwara ecyahi kikye eky'obwire obukye. Hanu hariho ebiicweka birungi kukira app etaine layisinsi:",
+      "afford": "Guma ebishashurwa ahansi y'ekicweka kya kashatu ky'empiiho yaawe ya buri mwezi — aha byafaayo byawe eki n'nka UGX 220,000 omu nnaku 30 aha muhendo gw'amazima. Noyenda ninkworeka ekirikugyendana?",
+      "licensed": "Abahaisi abaine layisinsi bari aha rukalara rwa UMRA / Bank of Uganda — emihendo eine ekikomo, tihariho kusherereza. App ezitaine layisinsi nizikira kusaba 60%+ zikatwara abo bo. Ngambira app nanye ndikucheeka."
+    }
+  },
+  "understand": {
+    "headline": "Wahaine {{amount}}. Noza kushashura {{repay}} — eki n'{{extra}} ez'okwongyera omu nnaku {{days}}.",
+    "meansTitle": "Eki nikimanyisa ki ahariiwe",
+    "perDay": "N'nka UGX {{perDay}} buri izooba ei orikushashura kukwata esente egi.",
+    "perDayShort": "buri izooba",
+    "late": "Waashwija eizooba, ebihano nibibaasa kweyongyera juba — emirundi mingi kukira amagoba gonyini.",
+    "early": "Waashashura juba nosigaza kukira — tihariho mpeera y'okurindira.",
+    "cost": "Omuhendo gw'ecyahi eki",
+    "coach": "Tori mubi aha sente — okumanya omuhendo gw'amazima nikwo kukuguma omu buyinza. 👏"
+  },
+  "danger": {
+    "brand": "Obugume bwa BorrowWise",
+    "title": "Rinda — {{app}} neebaasa kukutega",
+    "reg": "Tiine layisinsi ya UMRA",
+    "f1": "Amagoba maingi aga buri izooba agarikweyongyera juba",
+    "f2": "Ebisiisa ebishishirwe, nibyorekwa waaba wamara kwikiriza",
+    "f3": "Neeyenda abo bo — nibakozesibwa kukuswaza",
+    "understand": "Yetegyereze ebirikukira otunge obuhwezi",
+    "understandSub": "Gamba na Sente — tunga ecyahi cy'amazima",
+    "continue": "gumizamu aha {{app}} n'obundi"
+  },
+  "contrib": {
+    "countSub": "abahaisi bakengire abandi omwezi ogu — ori omwe ahari bo",
+    "sentTitle": "Eki wacwiremu kutuma",
+    "sentSub": "Tihariho ekiruga aha simu yaawe otakateeraho. Iwe ori omu buyinza.",
+    "flagged": "Wooreka: {{app}}",
+    "reported": "Waloopa: okusherereza kwa SMS",
+    "view": "reeba",
+    "reportBtn": "Loopa app (okworekaho)",
+    "shareTitle": "Eki turikugarurayo — hatariho maziina",
+    "share1": "Omuhendo gwonka — nk'\"obumanyiso 12 aha Ezee Credit, Kampala\"",
+    "share2": "Okworekwa kurugiirira aha disitulikiti — tihariho maziina, bubaka, nari byahi",
+    "share3": "Bikungaanisibwa n'enkumi → Bank of Uganda na UMRA",
+    "privacy": "Obwakyo bwawe, SMS zawe n'ebyahi byawe tibiruga aha simu — omuhendo gwonka ogutaine maziina niigwo gurugaho."
+  },
+  "banned": {
+    "title": "App y'ecyahi embi eri aha simu yaawe",
+    "reason": "Teri aha rukalara rwa layisinsi rwa UMRA — app nk'ezi nizibaasa kukutega omu bbanja, ebisiisa ebishishirwe n'okusherereza.",
+    "action": "Yetegyereze otunge obuhwezi"
   },
   "common": { "on": "Ego", "off": "Ngaaha", "back": "Garuka" }
 }

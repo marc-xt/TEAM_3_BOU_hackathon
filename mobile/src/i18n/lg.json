@@ -13,7 +13,10 @@
     "noLoans": "Tewali bwewozi bunazuuliddwa",
     "noLoansAction": "Ddamu onoonye mu bubaka bwo",
     "rising": "Obwewozi bwo bweyongera",
-    "refresh": "Ddamu onoonye"
+    "refresh": "Ddamu onoonye",
+    "yourScore": "Empeera yo",
+    "safeToBorrow": "Ekyokwewola mu bukuumi",
+    "upTo": "okutuuka ku · ~ennaku 30"
   },
   "loan": {
     "youReceive": "Ky'ofuna",
@@ -30,7 +33,20 @@
     "licensed": "Omuwozi alina layisinsi",
     "unlicensed": "Talina layisinsi",
     "highCost": "Bwewozi bwa muwendo gwa waggulu",
-    "annualized": "Omuwendo gwa buli mwaka"
+    "offer": "Ekiwabyo ky'obwewozi",
+    "wouldRepay": "wandisasudde",
+    "annualized": "Omuwendo gwa buli mwaka",
+    "daily": "Omuwendo gwa buli lunaku",
+    "dailyValue": "{{pct}}% buli lunaku",
+    "understandBtn": "Tegeera obwewozi buno",
+    "repayments": "Ebisasulwa",
+    "repaymentsHint": "By'osasudde, n'ebisigadde oluvannyuma lwa buli kusasula.",
+    "date": "Olunaku",
+    "paid": "Ekisasuddwa",
+    "balance": "Ekisigadde",
+    "disbursed": "kyaweebwayo",
+    "thinkTwice": "Lowooza emirundi ebiri",
+    "thinkTwiceBody": "Ekiwabyo kino kya muwendo gwa waggulu era kiva eri omuwozi atali ku lukalala lwa layisinsi lwa UMRA."
   },
   "flags": {
     "HIGH_COST": "Muwendo gwa waggulu",
@@ -67,7 +83,133 @@
     "smsGranted": "Olukusa lwa SMS luweereddwa",
     "smsDenied": "Olukusa lwa SMS terunnaweebwa",
     "grantSms": "Wa olukusa lwa SMS",
-    "save": "Tereka"
+    "save": "Tereka",
+    "tools": "Ebikozesebwa",
+    "checkTerms": "Kebera ebiragiro by'obwewozi",
+    "talkToSente": "Yogera ne Sente (omuyambi wa AI)",
+    "simulateScan": "Gezaako okunoonya app enkyamu",
+    "simulateDanger": "Gezaako okuggulawo app enkyamu",
+    "saferOptions": "Laba engeri ennungi ez'okwewola",
+    "contribution": "Omugaso gwo eri okuwola okwa mirembe"
+  },
+  "bubble": { "hello": "Mbuuze", "label": "Njogera nange" },
+  "safer": {
+    "header": "Weetaaga ssente mangu? Tukitegeera.",
+    "sub": "Puleesa ya mazima — naye obwewozi bwa muwendo gwa waggulu obwa wiiki bbiri buyinza okukuzikiriza. Engeri ennungi olubereberye:",
+    "licensed": { "t": "Omuwozi alina layisinsi", "d": "Afugibwa UMRA/BoU ku miwendo egiriko ekkomo.", "s": "MoKash 9%/nnaku 30 kisinga 60%/nnaku 14" },
+    "sacco": { "t": "SACCO oba ekibiina kyo eky'okuzigya", "d": "Emiwendo gya bammemba, era tewali kujooga." },
+    "less": { "t": "Wola bitono, mu bbanga ttono", "d": "UGX 100k mu nnaku 7 kya bbeeyi ntono okusinga 200k mu nnaku 30." },
+    "wait": { "t": "Linda ennaku ntono bw'osobola", "d": "N'ennaku 3 ziyinza okuleeta omusaala oba engeri ya bbeeyi ntono." }
+  },
+  "safercard": {
+    "mokash": { "n": "MoKash — alina layisinsi (MTN)", "d": "Okutuuka ku UGX 250,000 · ~9% · kuba *165#. Sasula mu nnaku 30, si 14.", "a": "Ndaga engeri" },
+    "sacco": { "n": "SACCO oba ekibiina kyo eky'okuzigya", "d": "Omuwendo gwa bammemba, era bakulinda singa weekedde.", "a": "Zuula okumpi" }
+  },
+  "tc": {
+    "lede": "Ogenda kukkiriza app y'obwewozi? Teeka wano ebiragiro byayo nange nkulaga buli kabi mu lulimi olwangu.",
+    "placeholder": "Teeka wano ebiragiro bya app y'obwewozi…",
+    "loadSample": "Teekawo ebiragiro eby'okulabirako",
+    "analyse": "Kebera",
+    "analysing": "Nsoma ebiragiro ebitono…",
+    "redFlags": "By'olina okwegendereza",
+    "stubNote": "Kukebera kwa kulabirako. Ekituufu kisoma ebiragiro bya app ne kibyekenneenya na AI.",
+    "verdict": { "SAFE": "✓ Bilabika bulungi", "CAUTION": "⚠ Weegendereze", "PREDATORY": "⛔ Kya bunyazi — tokkiriza" },
+    "result": {
+      "summary": "Obwewozi buno bugula nga 30% buli wiiki — okusukka 300% mu mwaka. Buyinza okutwala ennamba n'ebifaananyi byo, okuggya ssente ku MoMo awatali kubuuza, n'okugabana ebikukwatako ne 'bakolagana nabo'. Tobukkiriza.",
+      "f1": { "c": "Amagoba 30% buli wiiki ku kisigadde", "w": "Kiba nga 320,000 okuzzaayo ku bwewozi bwa 200,000 mu wiiki bbiri — waggulu nnyo ku kkomo ettereke." },
+      "f2": { "c": "Owa olukusa ku bannamu bo, ebyayogerwako n'ebifaananyi", "w": "Bukozesebwa okukujooga n'okukuswaza (n'ab'omu maka go) bw'okerera." },
+      "f3": { "c": "Okkiriza okuggyibwako ssente mu ngeri ey'okwekolera ku MoMo", "w": "Basobola okuggyako ssente buli lwe wabaawo, ne ez'emmere oba obupangisa." },
+      "f4": { "c": "Ebikukwatako biyinza okugabanibwa n'abantu abalala 'abakolagana nabo'", "w": "Obwannannyini bwo n'obwewozi bugula awatali kukkiriza kwa nnamaddala." }
+    }
+  },
+  "progress": {
+    "title": "Enkulaakulana y'okusasula",
+    "paid": "Ekisasuddwa",
+    "left": "Ekisigadde",
+    "daysLeft": "Ennaku {{n}} ezisigadde",
+    "overdue": "Lwayise ekiseera",
+    "done": "Kisasuddwa kyonna 🎉"
+  },
+  "score": {
+    "outOf": "ku 100",
+    "band": { "healthy": "Omuwozi ali bulungi", "fair": "Wa wakati — waliwo w'oyinza okulongoosa", "risk": "Mu kabi" },
+    "builtTitle": "Kizimbiddwa okuva ku ssimu yo — mu kyama",
+    "f": {
+      "income": "Enfuna eneejja buli mwezi",
+      "debt": "Ebbanja ttono nga ogeraageranya n'enfuna",
+      "repaid": "Obwewozi busasuddwa mu kiseera",
+      "spending": "Okukozesa kweyongera ku nkomerero y'omwezi"
+    },
+    "privacy": "Empeera eno yiyo. Ezimbiddwa ku ssimu yo okuva ku byafaayo byo eby'ensimbi za MoMo — abawozi tebagiraba okuggyako nga ggwe okugabana."
+  },
+  "safe": {
+    "incomeLabel": "SSENTE EZIJJA KU SSIMU YO",
+    "month": "omwezi",
+    "incomeSub": "eziyingira ne zisigala, nga tugeraageranyizza emyezi 3",
+    "recBadge": "Okuwabula okw'obuvunaanyizibwa",
+    "canBorrow": "Osobola okwewola awatali kabi okutuuka ku",
+    "at": "mu nnaku ~30, ku muwendo omutuufu wansi wa {{pct}}%",
+    "comfortable": "Mu bukuumi",
+    "tight": "Kifundikirivu",
+    "risky": "Kya kabi",
+    "lay": "Mu ngeri ennyangu: kino kikuuma ebisasulwa wansi w'ekitundu kya kusatu eky'enfuna yo — n'osobola okusasula emmere, obupangisa n'airtime. Bw'owola okusingawo weeteeka mu kabi."
+  },
+  "chat": {
+    "greeting": "Oli otya — nze Sente. Mbuuza kyonna ku bwewozi oba ssente zo, tewali kunenya. Nkuyambe ntya?",
+    "rescueOpener": "Nakuyimirizza nga tonnaba kuyingira {{app}}. Weetaaga ssente ku ki? Tewali kunenya — ka tunoonye engeri ennungi. 🤝",
+    "typing": "Sente awandiika…",
+    "placeholder": "Buuza kyonna ku bwewozi bwo…",
+    "q1": "Ndaga engeri ennungi",
+    "q2": "Nsobola okukisasula?",
+    "q3": "Omuwozi ono alina layisinsi?",
+    "micHint": "Okwogera — kujja mangu",
+    "reply": {
+      "greeting": "Ndi wano. Mbuulira ekikuluma ku ssente nange nnaakuyamba — tewali kunenya.",
+      "askAmount": "Nkuwulira — puleesa eno ya mazima. Weetaaga ssente mmeka, era ddi?",
+      "recommend": "Weebale. Okusinziira ku ssente ezijja ku ssimu yo, osobola okutwala obwewozi obutono obw'ekiseera ekimpi. Wano waliwo ebifo ebirungi okusinga app etalina layisinsi:",
+      "afford": "Kuuma ebisasulwa wansi w'ekitundu kya kusatu eky'enfuna yo eya buli mwezi — ku byafaayo byo kino kiba nga UGX 220,000 mu nnaku 30 ku muwendo omutuufu. Oyagala nkulage ekigyamu?",
+      "licensed": "Abawozi abalina layisinsi bali ku lukalala lwa UMRA / Bank of Uganda — emiwendo giriko ekkomo, tewali kujooga. Za app ezitalina layisinsi zitera okusaba 60%+ ne zitwala bannamu bo. Mbuulira app nange nkukebera."
+    }
+  },
+  "understand": {
+    "headline": "Wawola {{amount}}. Ojja kusasula {{repay}} — ekyo {{extra}} eby'enyongeza mu nnaku {{days}}.",
+    "meansTitle": "Kino kitegeeza ki gy'oli",
+    "perDay": "Kiba nga UGX {{perDay}} buli lunaku by'osasula okukwata ssente eno.",
+    "perDayShort": "buli lunaku",
+    "late": "Bw'osubwa olunaku, ebibonerezo biyinza okwongera mangu — emirundi mingi okusinga amagoba gennyini.",
+    "early": "Bw'osasula amangu osigaza singa — tewali mpeera ya kulwawo.",
+    "cost": "Omuwendo gw'obwewozi buno",
+    "coach": "Toli mubi ku ssente — okumanya omuwendo omutuufu kwe kukukuuma mu buyinza. 👏"
+  },
+  "danger": {
+    "brand": "Obukuumi bwa BorrowWise",
+    "title": "Linda — {{app}} eyinza okukutega",
+    "reg": "Talina layisinsi ya UMRA",
+    "f1": "Amagoba amanene aga buli lunaku ageeyongera mangu",
+    "f2": "Ebisale ebikwekeddwa, bilagibwa ng'omaze okukkiriza",
+    "f3": "Yeetaaga bannamu bo — bakozesebwa okukuswaza",
+    "understand": "Tegeera ebisingawo ofune obuyambi",
+    "understandSub": "Yogera ne Sente — funa obwewozi obw'omutuufu",
+    "continue": "weyongere ku {{app}} wadde"
+  },
+  "contrib": {
+    "countSub": "abawozi bakuumye abalala omwezi guno — oli omu ku bo",
+    "sentTitle": "Kye weeroboza okuweereza",
+    "sentSub": "Tewali kiva ku ssimu yo nga tonnyinza kukwata. Ggwe oli mu buyinza.",
+    "flagged": "Walaze: {{app}}",
+    "reported": "Waloopa: okujooga kwa SMS",
+    "view": "laba",
+    "reportBtn": "Loopa app (okulabirako)",
+    "shareTitle": "Kye tuddizaawo — awatali mannya",
+    "share1": "Muwendo gwokka — okugeza \"obubonero 12 ku Ezee Credit, Kampala\"",
+    "share2": "Okwolesebwa okusinziira ku disitulikiti — tewali mannya, bubaka, oba bwewozi",
+    "share3": "Bikuŋŋaanyizibwa n'enkumi → Bank of Uganda ne UMRA",
+    "privacy": "Obwannannyini bwo, SMS zo n'obwewozi bwo tebiva ku ssimu — muwendo gwokka ogutalina mannya gwe guvaayo."
+  },
+  "banned": {
+    "title": "App y'obwewozi ey'akabi eri ku ssimu yo",
+    "reason": "Teri ku lukalala lwa layisinsi lwa UMRA — za app nga zino ziyinza okukutega mu bbanja, ebisale ebikwekeddwa n'okujooga.",
+    "action": "Tegeera ofune obuyambi"
   },
   "common": { "on": "Yee", "off": "Nedda", "back": "Ddayo" }
 }
