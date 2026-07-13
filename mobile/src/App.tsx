@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { View, Text, Pressable, AppState, StyleSheet, ActivityIndicator } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, createNavigationContainerRef } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StatusBar } from "expo-status-bar";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -11,11 +11,18 @@ import HomeScreen from "./screens/HomeScreen";
 import LoanDetailScreen from "./screens/LoanDetailScreen";
 import SettingsScreen from "./screens/SettingsScreen";
 import OnboardingScreen from "./screens/OnboardingScreen";
+import ChatScreen from "./screens/ChatScreen";
+import HelperBubble from "./components/HelperBubble";
 import { authenticate, shouldRelock } from "./lock/appLock";
 import { colors } from "./theme";
 
 const ONBOARDED_KEY = "cs.onboarded";
 const Stack = createNativeStackNavigator();
+const navigationRef = createNavigationContainerRef();
+
+function openChat(params?: object) {
+  if (navigationRef.isReady()) (navigationRef.navigate as any)("Chat", params);
+}
 
 const navTheme = {
   dark: false,
@@ -95,24 +102,28 @@ export default function App() {
   return (
     <AppProvider>
       <StatusBar style="light" />
-      <NavigationContainer theme={navTheme as any}>
-        <Stack.Navigator>
-          <Stack.Screen
-            name="Home"
-            component={HomeScreen}
-            options={({ navigation }) => ({
-              title: "BorrowWise",
-              headerRight: () => (
-                <Pressable onPress={() => navigation.navigate("Settings")} hitSlop={12}>
-                  <Text style={styles.gear}>⚙︎</Text>
-                </Pressable>
-              ),
-            })}
-          />
-          <Stack.Screen name="LoanDetail" component={LoanDetailScreen} options={{ title: "Loan" }} />
-          <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: "Settings" }} />
-        </Stack.Navigator>
-      </NavigationContainer>
+      <View style={{ flex: 1 }}>
+        <NavigationContainer ref={navigationRef} theme={navTheme as any}>
+          <Stack.Navigator>
+            <Stack.Screen
+              name="Home"
+              component={HomeScreen}
+              options={({ navigation }) => ({
+                title: "BorrowWise",
+                headerRight: () => (
+                  <Pressable onPress={() => navigation.navigate("Settings")} hitSlop={12}>
+                    <Text style={styles.gear}>⚙︎</Text>
+                  </Pressable>
+                ),
+              })}
+            />
+            <Stack.Screen name="LoanDetail" component={LoanDetailScreen} options={{ title: "Loan" }} />
+            <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: "Settings" }} />
+            <Stack.Screen name="Chat" component={ChatScreen} options={{ title: "Sente · helper" }} />
+          </Stack.Navigator>
+        </NavigationContainer>
+        <HelperBubble onPress={() => openChat()} />
+      </View>
     </AppProvider>
   );
 }

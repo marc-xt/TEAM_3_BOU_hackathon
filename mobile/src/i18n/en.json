@@ -81,5 +81,15 @@
     "grantSms": "Grant SMS access",
     "save": "Save"
   },
+  "chat": {
+    "greeting": "Hi — I'm Sente. Ask me anything about your loans or money, no judgment. How can I help?",
+    "rescueOpener": "I stopped you before {{app}}. What do you need the money for? No judgment — let's find a safer way. 🤝",
+    "typing": "Sente is typing…",
+    "placeholder": "Ask anything about your loans…",
+    "q1": "Show me safer options",
+    "q2": "Can I afford this?",
+    "q3": "Is this lender licensed?"
+  },
+  "bubble": { "hello": "Hi there", "label": "Talk to me" },
   "common": { "on": "On", "off": "Off", "back": "Back" }
 }
