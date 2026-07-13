@@ -14,7 +14,7 @@ const PREF_RISING = "cs.pref.risingAlerts";
 
 export default function SettingsScreen({ navigation }: any) {
   const { t, i18n } = useTranslation();
-  const { refresh, injectSamples, exitSamples, sampleMode } = useApp();
+  const { refresh, injectSamples, exitSamples, sampleMode, showDanger } = useApp();
   const [lang, setLang] = useState(i18n.language);
   const [lock, setLock] = useState(true);
   const [timeout, setTimeoutMin] = useState(2);
@@ -60,6 +60,14 @@ export default function SettingsScreen({ navigation }: any) {
         </Pressable>
         <Pressable style={styles.navRow} onPress={() => navigation.navigate("Chat")}>
           <Text style={styles.navRowText}>💬  {t("settings.talkToSente")}</Text>
+          <Text style={styles.navChevron}>›</Text>
+        </Pressable>
+        <Pressable style={styles.navRow} onPress={() => navigation.navigate("SaferOptions")}>
+          <Text style={styles.navRowText}>🤝  {t("settings.saferOptions")}</Text>
+          <Text style={styles.navChevron}>›</Text>
+        </Pressable>
+        <Pressable style={styles.navRow} onPress={() => showDanger("Ezee Credit")}>
+          <Text style={styles.navRowText}>⚠️  {t("settings.simulateDanger")}</Text>
           <Text style={styles.navChevron}>›</Text>
         </Pressable>
       </Section>

@@ -13,7 +13,10 @@ import SettingsScreen from "./screens/SettingsScreen";
 import OnboardingScreen from "./screens/OnboardingScreen";
 import ChatScreen from "./screens/ChatScreen";
 import TcReviewScreen from "./screens/TcReviewScreen";
+import UnderstandLoanScreen from "./screens/UnderstandLoanScreen";
+import SaferOptionsScreen from "./screens/SaferOptionsScreen";
 import HelperBubble from "./components/HelperBubble";
+import DangerOverlay from "./components/DangerOverlay";
 import { authenticate, shouldRelock } from "./lock/appLock";
 import { colors } from "./theme";
 
@@ -122,9 +125,12 @@ export default function App() {
             <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: "Settings" }} />
             <Stack.Screen name="Chat" component={ChatScreen} options={{ title: "Sente · helper" }} />
             <Stack.Screen name="TcReview" component={TcReviewScreen} options={{ title: "Check terms" }} />
+            <Stack.Screen name="UnderstandLoan" component={UnderstandLoanScreen} options={{ title: "Understand this loan" }} />
+            <Stack.Screen name="SaferOptions" component={SaferOptionsScreen} options={{ title: "Safer ways to get cash" }} />
           </Stack.Navigator>
         </NavigationContainer>
         <HelperBubble onPress={() => openChat()} />
+        <DangerOverlay onUnderstand={(app) => openChat({ seedApp: app })} />
       </View>
     </AppProvider>
   );

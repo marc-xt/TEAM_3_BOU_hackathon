@@ -35,6 +35,7 @@
     "annualized": "Yearly rate",
     "daily": "Daily rate",
     "dailyValue": "{{pct}}% per day",
+    "understandBtn": "Understand this loan",
     "repayments": "Repayments",
     "repaymentsHint": "What you've paid, and the balance after each.",
     "date": "Date",
@@ -82,7 +83,9 @@
     "save": "Save",
     "tools": "Tools",
     "checkTerms": "Check a loan's terms",
-    "talkToSente": "Talk to Sente (AI helper)"
+    "talkToSente": "Talk to Sente (AI helper)",
+    "simulateDanger": "Simulate opening a risky app",
+    "saferOptions": "See safer ways to borrow"
   },
   "tc": {
     "lede": "About to accept a loan app? Paste its terms & conditions and I'll flag anything dangerous in plain language.",
@@ -104,5 +107,34 @@
     "q3": "Is this lender licensed?"
   },
   "bubble": { "hello": "Hi there", "label": "Talk to me" },
+  "safer": {
+    "header": "Need money fast? We get it.",
+    "sub": "The pressure is real — but a high-cost 2-week loan can dig a deeper hole. Safer ways first:",
+    "licensed": { "t": "A licensed lender", "d": "Regulated by UMRA/BoU with capped rates.", "s": "MoKash 9%/30d beats 60%/14d" },
+    "sacco": { "t": "Your SACCO or savings group", "d": "Members' rates, flexible, and no harassment." },
+    "less": { "t": "Borrow less, for less time", "d": "UGX 100k for 7 days costs far less than 200k for 30." },
+    "wait": { "t": "Wait a few days if you can", "d": "Even 3 days may bring salary or a cheaper option." }
+  },
+  "understand": {
+    "headline": "You borrowed {{amount}}. You'll repay {{repay}} — that's {{extra}} extra over {{days}} days.",
+    "meansTitle": "What this means for you",
+    "perDay": "That's about {{perDay}} a day you're paying to hold this money.",
+    "perDayShort": "per day",
+    "late": "Miss the due date and penalties can add up fast — often more than the interest itself.",
+    "early": "Repay early and you keep more — there's no reward for waiting.",
+    "cost": "Cost of this loan",
+    "coach": "You're not bad with money — knowing the true cost is what keeps you in control. 👏"
+  },
+  "danger": {
+    "brand": "BorrowWise protection",
+    "title": "Wait — {{app}} could trap you",
+    "reg": "Not licensed by UMRA",
+    "f1": "High daily interest that stacks up fast",
+    "f2": "Hidden fees, shown after you accept",
+    "f3": "Wants your contacts — used to shame you",
+    "understand": "Understand more & get help",
+    "understandSub": "Talk to Sente — find a safer loan",
+    "continue": "continue to {{app}} anyway"
+  },
   "common": { "on": "On", "off": "Off", "back": "Back" }
 }

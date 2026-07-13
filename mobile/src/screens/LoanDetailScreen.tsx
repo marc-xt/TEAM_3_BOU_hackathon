@@ -1,11 +1,11 @@
 import React from "react";
-import { ScrollView, View, Text, StyleSheet } from "react-native";
+import { ScrollView, View, Text, StyleSheet, Pressable } from "react-native";
 import { useTranslation } from "react-i18next";
 import DisclosureCard from "../components/DisclosureCard";
 import type { StoredLoan, Payment } from "../domain/types";
 import { colors, space, fmtUGX, fmtDate } from "../theme";
 
-export default function LoanDetailScreen({ route }: any) {
+export default function LoanDetailScreen({ route, navigation }: any) {
   const { t } = useTranslation();
   const loan = route.params.loan as StoredLoan;
   // Newest first for display.
@@ -22,6 +22,10 @@ export default function LoanDetailScreen({ route }: any) {
       )}
 
       <DisclosureCard loan={loan} />
+
+      <Pressable style={styles.understandBtn} onPress={() => navigation.navigate("UnderstandLoan", { loan })}>
+        <Text style={styles.understandText}>{t("loan.understandBtn")} →</Text>
+      </Pressable>
 
       {!loan.is_repaid && loan.kind === "DISBURSEMENT" && (
         <View style={styles.owedCard}>
@@ -63,6 +67,8 @@ function isoDay(ms: number): string {
 const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: colors.cream },
   content: { padding: space.s3, gap: space.s3 },
+  understandBtn: { backgroundColor: colors.gold, borderRadius: 10, paddingVertical: space.s3, alignItems: "center" },
+  understandText: { color: colors.maroonDark, fontWeight: "800", fontSize: 14 },
   warn: { backgroundColor: colors.highBg, borderRadius: 12, padding: space.s3, gap: space.s1 },
   warnTitle: { color: colors.high, fontWeight: "800", fontSize: 15 },
   warnBody: { color: colors.text, fontSize: 13, lineHeight: 18 },

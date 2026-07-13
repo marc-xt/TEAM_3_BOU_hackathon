@@ -25,6 +25,9 @@ interface AppState {
   refreshing: boolean;
   rising: boolean;
   sampleMode: boolean;
+  dangerApp: string | null;
+  showDanger: (app: string) => void;
+  hideDanger: () => void;
   refresh: () => Promise<void>;
   injectSamples: () => Promise<void>;
   exitSamples: () => Promise<void>;
@@ -47,6 +50,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const [refreshing, setRefreshing] = useState(false);
   const [rising, setRising] = useState(false);
   const [sampleMode, setSampleMode] = useState(false);
+  const [dangerApp, setDangerApp] = useState<string | null>(null);
 
   // Fold a set of parsed entries (oldest first) into a fresh loan list, then
   // persist + score + notify + report. Shared by refresh() and injectSamples().
@@ -141,7 +145,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   }, [refresh]);
 
   return (
-    <Ctx.Provider value={{ loans, health, refreshing, rising, sampleMode, refresh, injectSamples, exitSamples }}>
+    <Ctx.Provider value={{ loans, health, refreshing, rising, sampleMode, dangerApp, showDanger: setDangerApp, hideDanger: () => setDangerApp(null), refresh, injectSamples, exitSamples }}>
       {children}
     </Ctx.Provider>
   );
