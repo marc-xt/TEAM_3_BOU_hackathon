@@ -93,5 +93,110 @@
     "contribution": "Mchango wako kwa ukopeshaji salama"
   },
   "bubble": { "hello": "Habari", "label": "Ongea nami" },
+  "tc": {
+    "lede": "Karibu kukubali programu ya mkopo? Bandika masharti yake na nitakuonyesha lolote hatari kwa lugha rahisi.",
+    "placeholder": "Bandika masharti ya programu ya mkopo hapa…",
+    "loadSample": "Pakia mfano wa masharti",
+    "analyse": "Kagua",
+    "analysing": "Ninasoma maandishi madogo…",
+    "redFlags": "Ya kuangalia",
+    "stubNote": "Ukaguzi wa onyesho. Toleo kamili husoma masharti ya programu na kuyachambua kwa AI.",
+    "verdict": { "SAFE": "✓ Yanaonekana sawa", "CAUTION": "⚠ Kuwa mwangalifu", "PREDATORY": "⛔ Ni ya unyonyaji — usikubali" }
+  },
+  "chat": {
+    "greeting": "Habari — mimi ni Sente. Niulize chochote kuhusu mikopo au pesa zako, bila kuhukumu. Nikusaidie vipi?",
+    "rescueOpener": "Nilikuzuia kabla ya {{app}}. Unahitaji pesa kwa ajili ya nini? Bila kuhukumu — tutafute njia salama. 🤝",
+    "typing": "Sente anaandika…",
+    "placeholder": "Uliza chochote kuhusu mikopo yako…",
+    "q1": "Nionyeshe njia salama",
+    "q2": "Naweza kumudu hii?",
+    "q3": "Je, mkopeshaji huyu ana leseni?",
+    "reply": {
+      "greeting": "Nipo. Niambie kinachoendelea na pesa nami nitasaidia — bila kuhukumu.",
+      "askAmount": "Nakusikia — msongo huo ni halisi. Unahitaji kiasi gani, na lini?",
+      "recommend": "Asante. Kulingana na pesa zinazoingia kwenye simu yako, unaweza kumudu mkopo mdogo wa muda mfupi. Hapa kuna sehemu salama kuliko programu isiyo na leseni:",
+      "afford": "Weka malipo chini ya theluthi moja ya mapato yako ya mwezi — kwa historia yako ni takriban UGX 220,000 kwa siku 30 kwa kiwango cha haki. Ungependa nikuonyeshe kinachofaa?",
+      "licensed": "Wakopeshaji wenye leseni wako kwenye orodha ya UMRA / Benki Kuu ya Uganda — viwango vyenye kikomo, hakuna unyanyasaji. Programu zisizo na leseni mara nyingi hutoza 60%+ na kuchukua anwani zako. Niambie programu nami nitaikagua."
+    }
+  },
+  "safer": {
+    "header": "Unahitaji pesa haraka? Tunaelewa.",
+    "sub": "Msongo ni halisi — lakini mkopo wa gharama kubwa wa wiki mbili waweza kukuzamisha zaidi. Njia salama kwanza:",
+    "licensed": { "t": "Mkopeshaji mwenye leseni", "d": "Amesimamiwa na UMRA/BoU kwa viwango vyenye kikomo.", "s": "MoKash 9%/siku 30 ni bora kuliko 60%/siku 14" },
+    "sacco": { "t": "SACCO au kikundi chako cha akiba", "d": "Viwango vya wanachama, rahisi, na hakuna unyanyasaji." },
+    "less": { "t": "Kopa kidogo, kwa muda mfupi", "d": "UGX 100k kwa siku 7 ni nafuu kuliko 200k kwa siku 30." },
+    "wait": { "t": "Subiri siku chache ikiwezekana", "d": "Hata siku 3 zaweza kuleta mshahara au njia nafuu." }
+  },
+  "understand": {
+    "headline": "Ulikopa {{amount}}. Utalipa {{repay}} — hiyo ni {{extra}} zaidi kwa siku {{days}}.",
+    "meansTitle": "Maana yake kwako",
+    "perDay": "Ni kama UGX {{perDay}} kwa siku unayolipa kushikilia pesa hii.",
+    "perDayShort": "kwa siku",
+    "late": "Ukikosa tarehe, adhabu zaweza kuongezeka haraka — mara nyingi zaidi ya riba yenyewe.",
+    "early": "Ukilipa mapema unabaki na zaidi — hakuna zawadi ya kusubiri.",
+    "cost": "Gharama ya mkopo huu",
+    "coach": "Wewe si mbaya kwa pesa — kujua gharama halisi ndiko kunakuweka kwenye udhibiti. 👏"
+  },
+  "danger": {
+    "brand": "Ulinzi wa BorrowWise",
+    "title": "Subiri — {{app}} yaweza kukunasa",
+    "reg": "Haina leseni ya UMRA",
+    "f1": "Riba kubwa ya kila siku inayoongezeka haraka",
+    "f2": "Ada zilizofichwa, zinaonyeshwa baada ya kukubali",
+    "f3": "Inataka anwani zako — hutumika kukuaibisha",
+    "understand": "Elewa zaidi na upate msaada",
+    "understandSub": "Ongea na Sente — pata mkopo salama",
+    "continue": "endelea kwa {{app}} hata hivyo"
+  },
+  "contrib": {
+    "countSub": "wakopaji walilinda wengine mwezi huu — wewe ni mmoja wao",
+    "sentTitle": "Ulichochagua kutuma",
+    "sentSub": "Hakuna kinachotoka simuni bila wewe kubofya. Uko na udhibiti.",
+    "flagged": "Umeripoti: {{app}}",
+    "reported": "Umeripoti: unyanyasaji wa SMS",
+    "view": "tazama",
+    "reportBtn": "Ripoti programu (onyesho)",
+    "shareTitle": "Tunachoshiriki — bila majina",
+    "share1": "Idadi tu — mfano \"alama 12 kwa Ezee Credit, Kampala\"",
+    "share2": "Mfichuo kwa wilaya — hakuna majina, jumbe, wala mikopo",
+    "share3": "Zinakusanywa na maelfu → Benki Kuu ya Uganda na UMRA",
+    "privacy": "Utambulisho wako, SMS na mikopo yako haviondoki simuni kamwe — ni idadi isiyo na majina tu inayotoka."
+  },
+  "banned": {
+    "title": "Programu ya mkopo hatari kwenye simu yako",
+    "reason": "Haiko kwenye orodha ya leseni ya UMRA — programu kama hizi zaweza kukunasa kwa madeni, ada zilizofichwa na unyanyasaji.",
+    "action": "Elewa na upate msaada"
+  },
+  "progress": {
+    "title": "Maendeleo ya malipo",
+    "paid": "Umelipa",
+    "left": "Imebaki",
+    "daysLeft": "Siku {{n}} zimebaki",
+    "overdue": "Imepitwa",
+    "done": "Imelipwa kikamilifu 🎉"
+  },
+  "score": {
+    "outOf": "kati ya 100",
+    "band": { "healthy": "Mkopaji mwenye afya", "fair": "Wastani — kuna nafasi ya kuboresha", "risk": "Hatarini" },
+    "builtTitle": "Imejengwa kutoka simu yako — kwa faragha",
+    "f": {
+      "income": "Mapato thabiti kila mwezi",
+      "debt": "Deni dogo ukilinganisha na mapato",
+      "repaid": "Mikopo imelipwa kwa wakati",
+      "spending": "Matumizi yanapanda mwishoni mwa mwezi"
+    },
+    "privacy": "Alama hii ni yako. Imejengwa kwenye kifaa chako kutoka historia yako ya Pesa za Simu — wakopeshaji hawaioni isipokuwa wewe uchague kushiriki."
+  },
+  "safe": {
+    "incomeLabel": "PESA ZINAZOINGIA KWENYE SIMU YAKO",
+    "month": "mwezi",
+    "incomeSub": "zinazoingia na kubaki, wastani wa miezi 3",
+    "canBorrow": "Unaweza kukopa kwa usalama hadi",
+    "at": "kwa siku ~30, kwa kiwango cha haki chini ya {{pct}}%",
+    "comfortable": "Salama",
+    "tight": "Finyu",
+    "risky": "Hatari",
+    "lay": "Kwa lugha rahisi: hii inaweka malipo chini ya theluthi ya mapato yako — hivyo bado waweza kulipia chakula, kodi na airtime. Ukikopa zaidi wahatarisha kubaki nyuma."
+  },
   "common": { "on": "Washa", "off": "Zima", "back": "Rudi" }
 }
