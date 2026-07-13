@@ -13,7 +13,10 @@
     "noLoans": "No loans found yet",
     "noLoansAction": "Refresh to scan your messages",
     "rising": "Your borrowing is climbing",
-    "refresh": "Refresh"
+    "refresh": "Refresh",
+    "yourScore": "Your score",
+    "safeToBorrow": "Safe to borrow",
+    "upTo": "up to · ~30 days"
   },
   "loan": {
     "youReceive": "You receive",
@@ -124,6 +127,29 @@
     "early": "Repay early and you keep more — there's no reward for waiting.",
     "cost": "Cost of this loan",
     "coach": "You're not bad with money — knowing the true cost is what keeps you in control. 👏"
+  },
+  "score": {
+    "outOf": "out of 100",
+    "band": { "healthy": "Healthy borrower", "fair": "Fair — room to improve", "risk": "At risk" },
+    "builtTitle": "Built from your phone — privately",
+    "f": {
+      "income": "Steady income landing each month",
+      "debt": "Low existing debt vs income",
+      "repaid": "Loans repaid on time so far",
+      "spending": "Spending rises near month-end"
+    },
+    "privacy": "This score is yours. It's built on your device from your Mobile Money history — lenders don't see it unless you choose to share."
+  },
+  "safe": {
+    "incomeLabel": "MONEY LANDING ON YOUR PHONE",
+    "month": "month",
+    "incomeSub": "what comes in and stays, averaged over 3 months",
+    "canBorrow": "You can comfortably borrow up to",
+    "at": "over ~30 days, at a fair rate under {{pct}}%",
+    "comfortable": "Comfortable",
+    "tight": "Tight",
+    "risky": "Risky",
+    "lay": "In plain terms: this keeps repayments under a third of your income — so you can still cover food, rent and airtime. Borrow more and you risk falling behind."
   },
   "danger": {
     "brand": "BorrowWise protection",
