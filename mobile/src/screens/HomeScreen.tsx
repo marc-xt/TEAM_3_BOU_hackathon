@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useApp } from "../state/context";
 import HealthBanner from "../components/HealthBanner";
 import LoanCard from "../components/LoanCard";
+import BannedAppBanner from "../components/BannedAppBanner";
 import { colors, space, fmtUGX } from "../theme";
 import { summarize } from "../domain/health";
 import { estimateMonthlyIncome, computeScore, computeAffordability } from "../domain/insights";
@@ -27,6 +28,7 @@ export default function HomeScreen({ navigation }: any) {
       refreshControl={<RefreshControl refreshing={refreshing} onRefresh={refresh} tintColor={colors.maroon} />}
       ListHeaderComponent={
         <View style={{ gap: space.s3 }}>
+          <BannedAppBanner />
           <View style={styles.totalCard}>
             <Text style={styles.totalLabel}>{t("loan.outstanding")}</Text>
             <Text style={styles.totalValue}>{fmtUGX(total)}</Text>

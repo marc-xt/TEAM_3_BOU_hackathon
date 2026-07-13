@@ -66,3 +66,32 @@ export async function notifyRising(totalOutstanding: number, fmtAmount: (n: numb
     trigger: null, // fire now
   });
 }
+
+// High-urgency "dangerous app" channel — MAX importance so it heads-up over
+// whatever's on screen. Deliberately prominent, not a quiet tray note.
+async function setupSecurityChannel(): Promise<void> {
+  if (Platform.OS === "android") {
+    await Notifications.setNotificationChannelAsync("security", {
+      name: "Loan-app safety alerts",
+      importance: Notifications.AndroidImportance.MAX,
+      lightColor: "#c0271d",
+      vibrationPattern: [0, 400, 200, 400],
+      bypassDnd: true,
+    });
+  }
+}
+
+// Urgent, expressive alert that a flagged/regulated lender app is on the device.
+export async function notifyBannedApp(appName: string, reason: string): Promise<void> {
+  await setupSecurityChannel();
+  await Notifications.scheduleNotificationAsync({
+    content: {
+      title: `⚠️ Risky loan app detected: ${appName}`,
+      body: `${reason} Tap to understand the danger and how to remove it.`,
+      color: "#c0271d",
+      priority: Notifications.AndroidNotificationPriority.MAX,
+      vibrate: [0, 400, 200, 400],
+    },
+    trigger: null,
+  });
+}

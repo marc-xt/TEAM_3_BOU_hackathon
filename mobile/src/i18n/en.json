@@ -87,7 +87,8 @@
     "tools": "Tools",
     "checkTerms": "Check a loan's terms",
     "talkToSente": "Talk to Sente (AI helper)",
-    "simulateDanger": "Simulate opening a risky app",
+    "simulateScan": "Simulate risky-app scan (banner + alert)",
+    "simulateDanger": "Simulate opening a risky app (overlay)",
     "saferOptions": "See safer ways to borrow",
     "contribution": "Your contribution to safer lending"
   },
@@ -176,6 +177,11 @@
     "share2": "Exposure by district — no names, no messages, no loans",
     "share3": "Pooled with thousands → Bank of Uganda & UMRA",
     "privacy": "Your identity, your SMS and your loans never leave the phone — only anonymous, aggregated numbers do."
+  },
+  "banned": {
+    "title": "Risky loan app on your phone",
+    "reason": "Not on UMRA's licensed register — apps like this can trap you in debt with hidden fees and harassment.",
+    "action": "Understand & get help"
   },
   "common": { "on": "On", "off": "Off", "back": "Back" }
 }

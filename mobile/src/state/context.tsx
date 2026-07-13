@@ -11,7 +11,7 @@ import { readLoanSms } from "../sms/reader";
 import { parseSms } from "../sms/parser";
 import { SAMPLE_SMS } from "../sms/samples";
 import { getHealth, reportLoans } from "../api/client";
-import { scheduleDueReminders, notifyRising, ensureNotifPermission } from "../notify/scheduler";
+import { scheduleDueReminders, notifyRising, notifyBannedApp, ensureNotifPermission } from "../notify/scheduler";
 import { fmtUGX } from "../theme";
 
 const LAST_TOTAL_KEY = "cs.lastTotal";
@@ -28,6 +28,9 @@ interface AppState {
   dangerApp: string | null;
   showDanger: (app: string) => void;
   hideDanger: () => void;
+  flaggedApp: { name: string; reason: string } | null;
+  showFlagged: (name: string, reason: string) => void;
+  clearFlagged: () => void;
   refresh: () => Promise<void>;
   injectSamples: () => Promise<void>;
   exitSamples: () => Promise<void>;
@@ -51,6 +54,15 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const [rising, setRising] = useState(false);
   const [sampleMode, setSampleMode] = useState(false);
   const [dangerApp, setDangerApp] = useState<string | null>(null);
+  const [flaggedApp, setFlaggedApp] = useState<{ name: string; reason: string } | null>(null);
+
+  const showFlagged = useCallback((name: string, reason: string) => {
+    setFlaggedApp({ name, reason });
+    (async () => {
+      await ensureNotifPermission();
+      await notifyBannedApp(name, reason);
+    })();
+  }, []);
 
   // Fold a set of parsed entries (oldest first) into a fresh loan list, then
   // persist + score + notify + report. Shared by refresh() and injectSamples().
@@ -145,7 +157,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   }, [refresh]);
 
   return (
-    <Ctx.Provider value={{ loans, health, refreshing, rising, sampleMode, dangerApp, showDanger: setDangerApp, hideDanger: () => setDangerApp(null), refresh, injectSamples, exitSamples }}>
+    <Ctx.Provider value={{ loans, health, refreshing, rising, sampleMode, dangerApp, showDanger: setDangerApp, hideDanger: () => setDangerApp(null), flaggedApp, showFlagged, clearFlagged: () => setFlaggedApp(null), refresh, injectSamples, exitSamples }}>
       {children}
     </Ctx.Provider>
   );
