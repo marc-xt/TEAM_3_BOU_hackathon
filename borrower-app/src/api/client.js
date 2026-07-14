@@ -1,14 +1,14 @@
-// Single place every backend call goes through (framework §8.4). Swapping the live API
-// for the bundled mock, or changing the base URL, is a one-line change here — never a
-// find-and-replace across components.
-//
-// Each call tries the live API first and falls back to the offline mock JSON when the
-// backend is unreachable, so the demo never shows a blank screen if the backend drops.
+import { authFetch } from "./authClient";
 
 const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:8000/api";
 const MOCK_URL = `${process.env.PUBLIC_URL || ""}/mock/borrower-mock.json`;
 
 let mockCache = null;
+
+function authHeaders() {
+  const token = localStorage.getItem("access_token");
+  return token ? { Authorization: `Bearer ${token}` } : {};
+}
 
 async function loadMock() {
   if (!mockCache) {
@@ -18,13 +18,16 @@ async function loadMock() {
   return mockCache;
 }
 
-export async function parseSms(text) {
+export async function parseSms(text, borrowerId) {
   try {
-    const res = await fetch(`${API_BASE}/parse-sms/`, {
+    const res = await authFetch(`${API_BASE}/parse-sms/`, () => ({
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text }),
-    });
+      headers: { "Content-Type": "application/json", ...authHeaders() },
+      body: JSON.stringify({
+        sms_text: text,
+        ...(borrowerId != null ? { borrower_id: borrowerId } : {}),
+      }),
+    }));
     if (!res.ok) throw new Error(`parse-sms responded ${res.status}`);
     return { data: await res.json(), source: "live" };
   } catch (err) {
@@ -43,7 +46,9 @@ export async function parseSms(text) {
 
 export async function getStress(borrowerId) {
   try {
-    const res = await fetch(`${API_BASE}/borrowers/${borrowerId}/stress/`);
+    const res = await authFetch(`${API_BASE}/borrowers/${borrowerId}/stress/`, () => ({
+      headers: { ...authHeaders() },
+    }));
     if (!res.ok) throw new Error(`stress responded ${res.status}`);
     return { data: await res.json(), source: "live" };
   } catch (err) {

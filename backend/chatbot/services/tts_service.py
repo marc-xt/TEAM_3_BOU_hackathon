@@ -54,7 +54,14 @@ def _synthesize_luganda(text: str, filepath: str) -> None:
 
 
 def synthesize_speech(text: str, language: str = "en") -> str:
-    """Returns the public MEDIA_URL path to the generated audio file."""
+    """Returns the absolute URL to the generated audio file.
+
+    Must be absolute (scheme + host + port), not just settings.MEDIA_URL --
+    this value is sent to the React frontend, which runs on a different
+    origin (localhost:3000) than this Django backend (localhost:8000). A
+    relative "/media/..." URL would resolve against the frontend's own
+    origin in the browser and 404 there instead of hitting this backend.
+    """
     out_dir = os.path.join(settings.MEDIA_ROOT, AUDIO_SUBDIR)
     os.makedirs(out_dir, exist_ok=True)
 
@@ -68,4 +75,5 @@ def synthesize_speech(text: str, language: str = "en") -> str:
         tts = gTTS(text=text, lang=language if language in ("en", "sw") else "en")
         tts.save(filepath)
 
-    return f"{settings.MEDIA_URL}{AUDIO_SUBDIR}/{filename}"
+    base_url = settings.BACKEND_BASE_URL.rstrip("/")
+    return f"{base_url}{settings.MEDIA_URL}{AUDIO_SUBDIR}/{filename}"

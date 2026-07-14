@@ -87,6 +87,8 @@ DATABASES = {
 
 GROQ_API_KEY = config("GROQ_API_KEY", default="")
 
+BACKEND_BASE_URL = config("BACKEND_BASE_URL", default="http://localhost:8000")
+
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 

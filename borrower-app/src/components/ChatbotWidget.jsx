@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { sendChatMessage, sendChatVoice } from "../api/chatbotClient";
+import { sendChatMessage, sendChatVoice } from "./chatbotClient";
+import "./ChatbotWidget.css";
 
 const LANGUAGES = [
   { id: "en", label: "English" },

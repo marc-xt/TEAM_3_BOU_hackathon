@@ -1,4 +1,11 @@
+import { authFetch } from "../api/authClient";
+
 const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:8000/api";
+
+function authHeaders() {
+  const token = localStorage.getItem("access_token");
+  return token ? { Authorization: `Bearer ${token}` } : {};
+}
 
 async function parseJsonResponse(res) {
   if (!res.ok) {
@@ -15,30 +22,37 @@ async function parseJsonResponse(res) {
 }
 
 export async function sendChatMessage({ message, language, conversationId }) {
-  const res = await fetch(`${API_BASE}/chatbot/message/`, {
+  const res = await authFetch(`${API_BASE}/chatbot/message/`, () => ({
     method: "POST",
-    credentials: "include",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", ...authHeaders() },
     body: JSON.stringify({
       message,
       language,
       ...(conversationId ? { conversation_id: conversationId } : {}),
     }),
-  });
+  }));
   return parseJsonResponse(res);
 }
 
 export async function sendChatVoice({ audioBlob, mimeType, language, conversationId }) {
   const extension = mimeType?.includes("mp4") ? "m4a" : mimeType?.includes("ogg") ? "ogg" : "webm";
-  const form = new FormData();
-  form.append("audio", audioBlob, `voice-message.${extension}`);
-  form.append("language", language);
-  if (conversationId) form.append("conversation_id", conversationId);
 
-  const res = await fetch(`${API_BASE}/chatbot/voice/`, {
-    method: "POST",
-    credentials: "include",
-    body: form,
-  });
+  // Rebuilt fresh each call by authFetch's buildInit — FormData bodies can't
+  // be reused after a failed fetch attempt, so a new instance is created on
+  // every invocation (including the post-refresh retry) rather than reusing
+  // one form object across both attempts.
+  function buildInit() {
+    const form = new FormData();
+    form.append("audio", audioBlob, `voice-message.${extension}`);
+    form.append("language", language);
+    if (conversationId) form.append("conversation_id", conversationId);
+    return {
+      method: "POST",
+      headers: authHeaders(), // don't set Content-Type manually for FormData
+      body: form,
+    };
+  }
+
+  const res = await authFetch(`${API_BASE}/chatbot/voice/`, buildInit);
   return parseJsonResponse(res);
 }

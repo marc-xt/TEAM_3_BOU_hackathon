@@ -8,6 +8,8 @@ import FinancialPlanner from "./features/FinancialPlanner";
 import OngoingAdvisory from "./features/OngoingAdvisory";
 import { parseSms, getStress, getSmsSamples } from "./api/client";
 import ChatbotWidget from "./components/ChatbotWidget";
+import LoginForm from "./components/LoginForm";
+import { isAuthenticated, logout } from "./api/authClient";
 
 // Every API-driven section follows the same loading -> data -> error shape (§8.4).
 const initialAsyncState = { status: "idle", data: null, error: null, source: null };
@@ -64,6 +66,7 @@ function HomeSection({ samples, disclosure, stress, onAnalyse }) {
 }
 
 export default function App() {
+  const [loggedIn, setLoggedIn] = useState(isAuthenticated());
   const [borrowerId] = useState(1);
   const [samples, setSamples] = useState([]);
   const [disclosure, setDisclosure] = useState(initialAsyncState);
@@ -100,13 +103,17 @@ export default function App() {
     }
   }
 
+  if (!loggedIn) {
+    return <LoginForm onLoginSuccess={() => setLoggedIn(true)} />;
+  }
+
   const usingFallback =
     disclosure.source === "mock" || stress.source === "mock";
 
   return (
     <div className="app">
       <header className="app__header">
-        <h1 className="app__title">CreditShield AI</h1>
+        <h1 className="app__title">BorrowWise</h1>
         <p className="app__subtitle">
           Understand a loan before you accept it — in plain language.
         </p>
@@ -129,6 +136,17 @@ export default function App() {
             {item.label}
           </button>
         ))}
+        <button
+          type="button"
+          className="btn-ghost"
+          onClick={() => {
+            logout();
+            setLoggedIn(false);
+          }}
+          style={{ marginTop: "var(--space-3)" }}
+        >
+          Log out
+        </button>
       </nav>
 
       <main className="app__main">
@@ -145,6 +163,10 @@ export default function App() {
         {activeSection === "planner" ? <FinancialPlanner /> : null}
         {activeSection === "ongoing" ? <OngoingAdvisory /> : null}
       </main>
+
+      {/* Floating chatbot widget — rendered outside the section switch so it
+          stays available regardless of which nav tab is active. */}
+      <ChatbotWidget borrowerId={borrowerId} />
     </div>
   );
 }
